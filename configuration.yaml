@@ -1,0 +1,119 @@
+homeassistant:
+  name: Home
+  latitude: 33.09886250000001
+  longitude: -96.81774609374999
+  elevation: 213
+  unit_system: imperial
+  time_zone: America/Chicago
+  customize:
+    media_player.bedroom:
+      friendly_name: Bedroom Chromecast
+      icon: mdi:filmstrip
+    media_player.living_room:
+      friendly_name: Living Room Chromecast
+      icon: mdi:filmstrip
+    sensor.yr_temperature:
+      friendly_name: Outside Temp
+    sensor.yr_precipitation:
+      friendly_name: Precip
+    zwave.sigma_designs_uzb_zwave_usb_adapter:
+      friendly_name: Z-Wave Controller
+    remote.bedroom_harmony:
+      icon: mdi:remote
+    remote.living_room_harmony:
+      icon: mdi:remote
+    switch.ge_patio_switch_switch:
+      friendly_name: Patio Switch
+    switch.wemo_switch:
+      friendly_name: Office Lamp
+    sensor.living_room_thermostat_humidity:
+      friendly_name: Nest Humidity
+    sensor.living_room_thermostat_target:
+      friendly_name: Nest Target
+    sensor.living_room_thermostat_temperature:
+      friendly_name: Nest Temp
+    binary_sensor.patio_sensor_patio:
+      friendly_name: Patio Door
+      device_class: opening
+    binary_sensor.front_door_sensor_sensor:
+      friendly_name: Front Door
+      device_class: opening
+  customize_glob:
+    "sensor.patio_sensor_*":
+      hidden: true
+    "sensor.front_door_sensor*":
+      hidden: true
+
+config:
+conversation:
+discovery:
+  ignore:
+    - samsung_tv
+frontend:
+history:
+logbook:
+sun:
+updater:
+
+http:  
+  api_password: !secret api_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+notify:
+  - platform: pushbullet
+    name: push
+    api_key: o.sypSQ7U82JK7xvvUnLKyUxHpnH4OraTU
+  - name: pushgroup
+    platform: group
+    services:
+      - service: push
+
+tts:
+  platform: google
+
+sensor:
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - precipitation
+
+mqtt:
+  broker: 192.168.1.101
+  port: 1883
+  client_id: home-assistant-1
+  username: !secret mqtt_username
+  password: !secret mqtt_broker_password
+
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+  sensors:
+    monitored_conditions:
+      - humidity
+      - temperature
+      - target
+  binary_sensors:
+    monitored_conditions:
+
+zwave:
+  usb_path: /dev/ttyUSB0
+
+zha:
+  usb_path: /dev/ttyUSB1
+  database_path: /home/homeassistant/.homeassistant/zigbee.db
+
+device_tracker:
+  - platform: owntracks
+
+#################
+#	INCLUDES	#
+#################
+
+alert: !include alerts.yaml
+automation: !include automations.yaml
+automation old: !include automations_old.yaml
+group: !include groups.yaml
+remote: !include remotes.yaml
+script: !include scripts.yaml
+zone: !include_dir_list zones/

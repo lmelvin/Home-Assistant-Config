@@ -1,0 +1,37 @@
+#VIEWS
+  livingroom_view:
+    name: Living Room
+    view: yes
+    entities:
+      - remote.living_room_harmony
+      - media_player.pn59d6500_pn59d6500
+      - media_player.living_room
+  bedroom_view:
+    name: BedRoom
+    view: yes
+    entities:
+      - remote.bedroom_harmony
+      - media_player.bedroom
+  office_view:
+    name: Office
+    view: yes
+    entities:
+      - switch.wemo_switch
+  family_view:
+    name: Family
+    view: yes
+    entities:
+      - device_tracker.mqtt_lukephone
+      - device_tracker.mqtt_daniphone
+#GROUPS
+  livingroom:
+    name: Living Room
+    entities:
+      - remote.living_room_harmony
+      - media_player.pn59d6500_pn59d6500
+      - media_player.living_room
+  bedroom:
+    name: Bedroom
+    entities:
+      - remote.bedroom_harmony
+      - media_player.bedroom

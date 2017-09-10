@@ -1,0 +1,10 @@
+patio_door:
+  name: Patio door is open
+  done_message: Patio door is closed
+  entity_id: binary_sensor.patio_sensor_patio
+  state: 'on'
+  repeat: 2
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - push

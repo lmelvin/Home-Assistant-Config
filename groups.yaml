@@ -17,21 +17,3 @@
     view: yes
     entities:
       - switch.wemo_switch
-  family_view:
-    name: Family
-    view: yes
-    entities:
-      - device_tracker.mqtt_lukephone
-      - device_tracker.mqtt_daniphone
-#GROUPS
-  livingroom:
-    name: Living Room
-    entities:
-      - remote.living_room_harmony
-      - media_player.pn59d6500_pn59d6500
-      - media_player.living_room
-  bedroom:
-    name: Bedroom
-    entities:
-      - remote.bedroom_harmony
-      - media_player.bedroom

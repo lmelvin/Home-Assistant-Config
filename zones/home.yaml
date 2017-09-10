@@ -1,5 +1,5 @@
 name: Home
-latitude: 33.09886250000001
-longitude: -96.81774609374999
+latitude: !secret zone_home_latitude
+longitude: !secret zone_home_longitude
 radius: 105
 icon: mdi:home-outline

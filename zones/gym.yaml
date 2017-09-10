@@ -1,4 +1,4 @@
 name: Gym
-latitude: 33.09901
-longitude: -96.796126
+latitude: !secret zone_gym_latitude
+longitude: !secret zone_gym_longitude
 radius: 40

@@ -46,7 +46,7 @@
       message: Home Assistant started.
 
 # Notify when a door opens when nobody is home
-- alias: 'Notify When Door Opens While Nobody Is Home'
+- alias: 'Notify When Door Opens While Everyone is Away'
   trigger:
     platform: state
     entity_id: 

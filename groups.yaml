@@ -6,6 +6,7 @@
       - remote.living_room_harmony
       - media_player.pn59d6500_pn59d6500
       - media_player.living_room
+      - climate.living_room
   bedroom_view:
     name: BedRoom
     view: yes

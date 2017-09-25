@@ -41,6 +41,8 @@ homeassistant:
       hidden: true
     "sensor.front_door_sensor*":
       hidden: true
+    "light.centralite_4257050rzhac_04483b08_1":
+      friendly_name: Bedroom Lamp
 
 config:
 conversation:

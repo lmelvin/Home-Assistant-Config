@@ -13,6 +13,7 @@
     entities:
       - remote.bedroom_harmony
       - media_player.bedroom
+      - light.centralite_4257050rzhac_04483b08_1
   office_view:
     name: Office
     view: yes

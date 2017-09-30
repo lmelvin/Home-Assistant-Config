@@ -6,6 +6,10 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize:
+    device_tracker.laptopol7di05q:
+      hidden: true
+    device_tracker.samsung_soundbar_jseries:
+      hidden: true
     media_player.bedroom:
       friendly_name: Bedroom Chromecast
     media_player.living_room:
@@ -30,6 +34,9 @@ homeassistant:
       friendly_name: Patio Door
     binary_sensor.front_door_sensor_sensor:
       friendly_name: Front Door
+    light.centralite_4257050rzhac_04483b08_1:
+      friendly_name: Bedroom Lamp
+
   customize_glob:
     "binary_sensor.*":
       device_class: opening
@@ -41,8 +48,6 @@ homeassistant:
       hidden: true
     "sensor.front_door_sensor*":
       hidden: true
-    "light.centralite_4257050rzhac_04483b08_1":
-      friendly_name: Bedroom Lamp
 
 config:
 conversation:
@@ -99,6 +104,8 @@ zha:
 
 device_tracker:
   - platform: owntracks
+  - platform: bluetooth_tracker
+    interval_seconds: 10
 
 #################
 #	INCLUDES	#

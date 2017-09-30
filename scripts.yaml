@@ -11,3 +11,28 @@ set_nest_home:
     - service: nest.set_mode
       data:
         home_mode: home
+
+set_nest_off:
+  alias: Set Nest to Off
+  sequence:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.living_room
+        operation_mode: "off"
+
+set_nest_cool:
+  alias: Set Nest to Cool
+  sequence:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.living_room
+        operation_mode: "cool"
+
+mute_bedroom_tv:
+  alias: Mute Bedroom TV
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.bedroom_harmony
+        device: 47285708
+        command: Mute

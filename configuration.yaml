@@ -6,20 +6,12 @@ homeassistant:
   unit_system: imperial
   time_zone: America/Chicago
   customize:
-    device_tracker.laptopol7di05q:
-      hidden: true
-    device_tracker.samsung_soundbar_jseries:
-      hidden: true
+    climate.living_room:
+      friendly_name: Nest Thermostat
     media_player.bedroom:
       friendly_name: Bedroom Chromecast
     media_player.living_room:
       friendly_name: Living Room Chromecast
-    sensor.yr_temperature:
-      friendly_name: Outside Temp
-    sensor.yr_precipitation:
-      friendly_name: Precip
-    zwave.sigma_designs_uzb_zwave_usb_adapter:
-      friendly_name: Z-Wave Controller
     switch.ge_patio_switch_switch:
       friendly_name: Patio Switch
     switch.wemo_switch:
@@ -30,12 +22,24 @@ homeassistant:
       friendly_name: Nest Target
     sensor.living_room_thermostat_temperature:
       friendly_name: Nest Temp
+    sensor.dark_sky_humidity:
+      friendly_name: Outside Humidity
+    sensor.dark_sky_temperature:
+      friendly_name: Outside Temp
+    sensor.dark_sky_nearest_storm_distance:
+      friendly_name: Nearest Storm
+    sensor.dark_sky_precip:
+      friendly_name: Precip
+    sensor.dark_sky_precip_intensity:
+      friendly_name: Precip Intensity
     binary_sensor.patio_sensor_patio:
       friendly_name: Patio Door
     binary_sensor.front_door_sensor_sensor:
       friendly_name: Front Door
     light.centralite_4257050rzhac_04483b08_1:
       friendly_name: Bedroom Lamp
+    zwave.sigma_designs_uzb_zwave_usb_adapter:
+      friendly_name: Z-Wave Controller
 
   customize_glob:
     "binary_sensor.*":
@@ -72,10 +76,15 @@ tts:
   platform: google
 
 sensor:
-  - platform: yr
+  - platform: darksky
+    api_key: 939be94166978a1c4320e310b90d3ef0
+    units: us
     monitored_conditions:
+      - precip_type
+      - precip_intensity
       - temperature
-      - precipitation
+      - nearest_storm_distance
+      - humidity
 
 mqtt:
   broker: !secret mqtt_ip
@@ -103,9 +112,8 @@ zha:
   database_path: /home/homeassistant/.homeassistant/zigbee.db
 
 device_tracker:
-  - platform: owntracks
+#  - platform: owntracks
   - platform: bluetooth_tracker
-    interval_seconds: 10
 
 #################
 #	INCLUDES	#

@@ -1,21 +1,46 @@
 #VIEWS
-  livingroom_view:
-    name: Living Room
-    view: yes
-    entities:
-      - remote.living_room_harmony
-      - media_player.pn59d6500_pn59d6500
-      - media_player.living_room
-      - climate.living_room
-  bedroom_view:
-    name: BedRoom
-    view: yes
-    entities:
-      - remote.bedroom_harmony
-      - media_player.bedroom
-      - light.centralite_4257050rzhac_04483b08_1
-  office_view:
-    name: Office
-    view: yes
-    entities:
-      - switch.wemo_switch
+livingroom_view:
+  name: Living Room
+  view: yes
+  entities:
+    - group.living_room
+bedroom_view:
+  name: BedRoom
+  view: yes
+  entities:
+    - group.bedroom
+office_view:
+  name: Office
+  view: yes
+  entities:
+    - group.office
+automation_view:
+  name: Auto
+  view: yes
+  entities:
+    - group.automation
+#GROUPS
+living_room:
+  name: Living Room
+  entities:
+    - remote.living_room_harmony
+    - media_player.pn59d6500_pn59d6500
+    - media_player.living_room
+    - climate.living_room
+    - sensor.living_room_thermostat_humidity
+    - sensor.living_room_thermostat_target
+    - sensor.living_room_thermostat_temperature
+bedroom:
+  name: Bedroom
+  entities:
+    - remote.bedroom_harmony
+    - media_player.bedroom
+    - light.centralite_4257050rzhac_04483b08_1
+office:
+  name: Office
+  entities:
+    - switch.wemo_switch
+patio:
+  name: Patio
+  entities:
+    - switch.ge_patio_switch_switch

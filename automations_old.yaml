@@ -23,7 +23,7 @@
 - alias: 'Someone Comes Home'
   trigger:
     platform: zone
-    entity_id: device_tracker.mqtt_daniphone,device_tracker.mqtt_lukephone
+    entity_id: device_tracker.lucass_iphone,device_tracker.samsungsmg935a
     zone: zone.home
     event: enter
   action:

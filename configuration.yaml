@@ -39,6 +39,13 @@ notify:
 tts:
   platform: google
 
+binary_sensor:
+  - platform: template
+    sensors:
+      roomba_bin_full:
+        friendly_name: Roomba Bin Full
+        value_template: "{{ states.vacuum.roomba.attributes.bin_full }}"
+
 sensor:
   - platform: darksky
     api_key: 939be94166978a1c4320e310b90d3ef0
@@ -49,7 +56,12 @@ sensor:
       - temperature
       - nearest_storm_distance
       - humidity
-
+  - platform: template
+    sensors:
+      roomba_battery:
+        friendly_name: Roomba Battery
+        unit_of_measurement: "%"
+        value_template: "{{ states.vacuum.roomba.attributes.battery_level }}"
 mqtt:
   broker: !secret mqtt_ip
   port: !secret mqtt_port

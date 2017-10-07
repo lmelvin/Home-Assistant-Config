@@ -3,11 +3,11 @@ light.centralite_4257050rzhac_04483b08_1:
 sensor.dark_sky_humidity:
   friendly_name: Outside Humidity
 sensor.dark_sky_nearest_storm_distance:
-  friendly_name: Nearest Storm Distance
+  friendly_name: Nearest Storm
 sensor.dark_sky_precip:
   friendly_name: Precip
 sensor.dark_sky_temperature:
-  friendly_name: Outside Temperature
+  friendly_name: Outside Temp
 sensor.dark_sky_precip_intensity:
   friendly_name: Precip Intensity
 switch.ge_patio_switch_switch:
@@ -20,8 +20,10 @@ sensor.living_room_thermostat_humidity:
   friendly_name: Living Room Humidity
 sensor.living_room_thermostat_target:
   friendly_name: Living Room Target
+  hidden: true
 sensor.living_room_thermostat_temperature:
   friendly_name: Living Room Temp
+  hidden: true
 binary_sensor.patio_sensor_patio:
   friendly_name: Patio Door
 binary_sensor.front_door_sensor_sensor:
@@ -31,4 +33,8 @@ climate.living_room:
 switch.office_switch:
   friendly_name: Office Lamp
 device_tracker.sle002s_iphone:
+  hidden: true
+binary_sensor.roomba_bin_full:
+  hidden: true
+sensor.roomba_battery:
   hidden: true

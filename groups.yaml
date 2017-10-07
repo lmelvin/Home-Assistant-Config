@@ -39,7 +39,7 @@ bedroom:
 office:
   name: Office
   entities:
-    - switch.wemo_switch
+    - switch.office_switch
 patio:
   name: Patio
   entities:

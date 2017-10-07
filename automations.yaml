@@ -1,0 +1,16 @@
+- action:
+  - condition: state
+    entity_id: remote.living_room_harmony
+    state: 'off'
+  - data:
+      activity: Watch TV
+      entity_id: remote.living_room_harmony
+    service: remote.turn_on
+  alias: Someone Comes Home
+  condition: []
+  id: '1507093785956'
+  trigger:
+  - entity_id: group.all_devices
+    from: not_home
+    platform: state
+    to: home

@@ -5,42 +5,7 @@ homeassistant:
   elevation: 213
   unit_system: imperial
   time_zone: America/Chicago
-  customize:
-    climate.living_room:
-      friendly_name: Nest Thermostat
-    media_player.bedroom:
-      friendly_name: Bedroom Chromecast
-    media_player.living_room:
-      friendly_name: Living Room Chromecast
-    switch.ge_patio_switch_switch:
-      friendly_name: Patio Switch
-    switch.wemo_switch:
-      friendly_name: Office Lamp
-    sensor.living_room_thermostat_humidity:
-      friendly_name: Nest Humidity
-    sensor.living_room_thermostat_target:
-      friendly_name: Nest Target
-    sensor.living_room_thermostat_temperature:
-      friendly_name: Nest Temp
-    sensor.dark_sky_humidity:
-      friendly_name: Outside Humidity
-    sensor.dark_sky_temperature:
-      friendly_name: Outside Temp
-    sensor.dark_sky_nearest_storm_distance:
-      friendly_name: Nearest Storm
-    sensor.dark_sky_precip:
-      friendly_name: Precip
-    sensor.dark_sky_precip_intensity:
-      friendly_name: Precip Intensity
-    binary_sensor.patio_sensor_patio:
-      friendly_name: Patio Door
-    binary_sensor.front_door_sensor_sensor:
-      friendly_name: Front Door
-    light.centralite_4257050rzhac_04483b08_1:
-      friendly_name: Bedroom Lamp
-    zwave.sigma_designs_uzb_zwave_usb_adapter:
-      friendly_name: Z-Wave Controller
-
+  customize: !include customize.yaml
   customize_glob:
     "binary_sensor.*":
       device_class: opening
@@ -52,7 +17,6 @@ homeassistant:
       hidden: true
     "sensor.front_door_sensor*":
       hidden: true
-
 config:
 conversation:
 discovery:
@@ -114,6 +78,13 @@ zha:
 device_tracker:
 #  - platform: owntracks
   - platform: bluetooth_tracker
+    interval_seconds: 15
+
+vacuum:
+  - platform: roomba
+    host: !secret roomba_ip
+    username: !secret roomba_un
+    password: !secret roomba_pw
 
 #################
 #	INCLUDES	#

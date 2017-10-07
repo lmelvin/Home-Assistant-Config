@@ -17,22 +17,7 @@
     - condition: sun
       after: sunrise
     - service: switch.turn_off
-      entity_id: switch.wemo_switch
-
-# Turn on stuff when someone comes home
-- alias: 'Someone Comes Home'
-  trigger:
-    platform: zone
-    entity_id: device_tracker.lucass_iphone,device_tracker.samsungsmg935a
-    zone: zone.home
-    event: enter
-  action:
-    - service: script.set_nest_home
-    - condition: state
-      entity_id: remote.living_room_harmony
-      state: 'off'
-    - service: remote.turn_on
-      entity_id: remote.living_room_harmony
+      entity_id: switch.office_switch
 
 # Notify when HASS starts up
 - alias: 'Home Assistant Startup'
@@ -94,3 +79,11 @@
     service: notify.push
     data_template:
       message: '{{ trigger.to_state.name }} is low on battery ({{ trigger.to_state.attributes.battery_level }}%)'
+
+- alias: Run Roomba
+  trigger:
+    - platform: time
+      at: '14:00:00'
+  action:
+    service: vacuum.turn_on
+    entity_id: vacuum.roomba

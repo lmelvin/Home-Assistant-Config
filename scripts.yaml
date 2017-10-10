@@ -36,3 +36,10 @@ mute_bedroom_tv:
         entity_id: remote.bedroom_harmony
         device: 47285708
         command: Mute
+
+roomba_return_home:
+  alias: Roomba Return Home
+  sequence:
+    - service: vacuum.return_to_base
+      data:
+        entity_id: vacuum.roomba

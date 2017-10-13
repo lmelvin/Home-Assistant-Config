@@ -38,3 +38,13 @@ binary_sensor.roomba_bin_full:
   hidden: true
 sensor.roomba_battery:
   hidden: true
+switch.living_room_chromecast:
+  hidden: true
+switch.living_room_tv:
+  hidden: true
+switch.bedroom_chromecast:
+  hidden: true
+switch.bedroom_tv:
+  hidden: true
+sensor.roomba_status:
+  hidden: true

@@ -103,6 +103,50 @@ device_tracker:
   - platform: bluetooth_tracker
     interval_seconds: 15
 
+switch:
+  - platform: template
+    switches:
+      bedroom_tv:
+        friendly_name: Bedroom TV
+        value_template: "{% if states.remote.bedroom_harmony.attributes.current_activity == 'Bedroom TV' %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.bedroom_harmony
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.bedroom_harmony
+      bedroom_chromecast:
+        friendly_name: Bedroom Chromecast
+        value_template: "{% if states.remote.bedroom_harmony.attributes.current_activity == 'Bedroom Chromecast' %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.bedroom_harmony
+          data:
+            activity: 28191884
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.bedroom_harmony
+      living_room_tv:
+        friendly_name: Living Room TV
+        value_template: "{% if states.remote.living_room_harmony.attributes.current_activity == 'Watch TV' %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.living_room_harmony
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.living_room_harmony
+      living_room_chromecast:
+        friendly_name: Living Room Chromecast
+        value_template: "{% if states.remote.living_room_harmony.attributes.current_activity == 'Watch Chromecast' %}on{% else %}off{% endif %}"
+        turn_on:
+          service: remote.turn_on
+          entity_id: remote.living_room_harmony
+          data:
+            activity: 27102123
+        turn_off:
+          service: remote.turn_off
+          entity_id: remote.living_room_harmony
+
 vacuum:
   - platform: roomba
     host: !secret roomba_ip

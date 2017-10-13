@@ -48,3 +48,11 @@ switch.bedroom_tv:
   hidden: true
 sensor.roomba_status:
   hidden: true
+zwave.sigma_designs_uzb_zwave_usb_adapter:
+  hidden: true
+zwave.front_door_sensor:
+  hidden: true
+zwave.ge_patio_switch:
+  hidden: true
+zwave.patio_sensor:
+  hidden: true

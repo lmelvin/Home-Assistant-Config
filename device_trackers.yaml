@@ -1,0 +1,3 @@
+- platform: bluetooth_tracker
+  interval_seconds: 12
+  track_new_devices: false

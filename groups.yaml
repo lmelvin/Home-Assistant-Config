@@ -14,11 +14,6 @@ office_view:
   view: yes
   entities:
     - group.office
-automation_view:
-  name: Auto
-  view: yes
-  entities:
-    - group.automation
 #GROUPS
 living_room:
   name: Living Room

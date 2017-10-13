@@ -39,58 +39,6 @@ notify:
 tts:
   platform: google
 
-binary_sensor:
-  - platform: template
-    sensors:
-      roomba_bin_full:
-        friendly_name: Roomba Bin Full
-        value_template: "{{ states.vacuum.roomba.attributes.bin_full }}"
-
-sensor:
-  - platform: darksky
-    api_key: 939be94166978a1c4320e310b90d3ef0
-    units: us
-    monitored_conditions:
-      - precip_type
-      - precip_intensity
-      - temperature
-      - nearest_storm_distance
-      - humidity
-  - platform: history_stats
-    name: TV On Today
-    entity_id: remote.living_room_harmony
-    state: 'on'
-    type: time
-    start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-    end: '{{ now() }}'
-  - platform: template
-    sensors:
-      roomba_battery:
-        friendly_name: Roomba Battery
-        unit_of_measurement: "%"
-        value_template: "{{ states.vacuum.roomba.attributes.battery_level }}"
-      roomba_status:
-        friendly_name: Roomba Status
-        value_template: "{{ states.vacuum.roomba.attributes.status }}"
-
-mqtt:
-  broker: !secret mqtt_ip
-  port: !secret mqtt_port
-  client_id: home-assistant-1
-  username: !secret mqtt_username
-  password: !secret mqtt_broker_password
-
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
-  sensors:
-    monitored_conditions:
-      - humidity
-      - temperature
-      - target
-  binary_sensors:
-    monitored_conditions:
-
 zwave:
   usb_path: /dev/ttyUSB0
 
@@ -98,69 +46,18 @@ zha:
   usb_path: /dev/ttyUSB1
   database_path: /home/homeassistant/.homeassistant/zigbee.db
 
-device_tracker:
-#  - platform: owntracks
-  - platform: bluetooth_tracker
-    interval_seconds: 15
-
-switch:
-  - platform: template
-    switches:
-      bedroom_tv:
-        friendly_name: Bedroom TV
-        value_template: "{% if states.remote.bedroom_harmony.attributes.current_activity == 'Bedroom TV' %}on{% else %}off{% endif %}"
-        turn_on:
-          service: remote.turn_on
-          entity_id: remote.bedroom_harmony
-        turn_off:
-          service: remote.turn_off
-          entity_id: remote.bedroom_harmony
-      bedroom_chromecast:
-        friendly_name: Bedroom Chromecast
-        value_template: "{% if states.remote.bedroom_harmony.attributes.current_activity == 'Bedroom Chromecast' %}on{% else %}off{% endif %}"
-        turn_on:
-          service: remote.turn_on
-          entity_id: remote.bedroom_harmony
-          data:
-            activity: 28191884
-        turn_off:
-          service: remote.turn_off
-          entity_id: remote.bedroom_harmony
-      living_room_tv:
-        friendly_name: Living Room TV
-        value_template: "{% if states.remote.living_room_harmony.attributes.current_activity == 'Watch TV' %}on{% else %}off{% endif %}"
-        turn_on:
-          service: remote.turn_on
-          entity_id: remote.living_room_harmony
-        turn_off:
-          service: remote.turn_off
-          entity_id: remote.living_room_harmony
-      living_room_chromecast:
-        friendly_name: Living Room Chromecast
-        value_template: "{% if states.remote.living_room_harmony.attributes.current_activity == 'Watch Chromecast' %}on{% else %}off{% endif %}"
-        turn_on:
-          service: remote.turn_on
-          entity_id: remote.living_room_harmony
-          data:
-            activity: 27102123
-        turn_off:
-          service: remote.turn_off
-          entity_id: remote.living_room_harmony
-
-vacuum:
-  - platform: roomba
-    host: !secret roomba_ip
-    username: !secret roomba_un
-    password: !secret roomba_pw
-
-#################
-#	INCLUDES	#
-#################
-
+# INCLUDES
 alert: !include alerts.yaml
 automation: !include automations.yaml
 automation old: !include automations_old.yaml
+binary_sensor: !include binary_sensors.yaml
+device_tracker: !include device_trackers.yaml
 group: !include groups.yaml
+mqtt: !include mqtt.yaml
+nest: !include nest.yaml
 remote: !include remotes.yaml
 script: !include scripts.yaml
+sensor: !include sensors.yaml
+switch: !include switches.yaml
+vacuum: !include vacuums.yaml
 zone: !include_dir_list zones/

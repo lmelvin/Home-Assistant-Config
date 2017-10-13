@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    roomba_bin_full:
+      friendly_name: Roomba Bin Full
+      value_template: "{{ states.vacuum.roomba.attributes.bin_full }}"

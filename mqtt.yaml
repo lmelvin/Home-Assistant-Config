@@ -1,0 +1,5 @@
+broker: !secret mqtt_ip
+port: !secret mqtt_port
+client_id: home-assistant-1
+username: !secret mqtt_username
+password: !secret mqtt_broker_password

@@ -1,3 +1,20 @@
+# Kill patio lights if it starts to rain
+- alias: Rain
+  trigger:
+    - platform: state
+      entity_id: sensor.dark_sky_precip
+      to: 'rain'
+  condition:
+    - condition: state
+      entity_id: switch.ge_patio_switch_switch
+      state: 'on'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.ge_patio_switch_switch
+    - service: notify.push
+      data_template:
+        message: 'Rain automation triggered! {{ as_timestamp(now()) | timestamp_custom("%m-%d-%Y %I:%M:%S %p", true) }}'
+
 # turn off stuff when everyone leaves
 - alias: 'Everyone Is Away'
   trigger:

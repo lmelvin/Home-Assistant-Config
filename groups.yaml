@@ -23,13 +23,14 @@ living_room:
     - media_player.living_room
     - climate.living_room
     - sensor.living_room_thermostat_humidity
-    - sensor.tv_on_today
+    - sensor.living_room_tv_on_today
 bedroom:
   name: Bedroom
   entities:
     - remote.bedroom_harmony
     - media_player.bedroom
     - light.centralite_4257050rzhac_04483b08_1
+    - sensor.bedroom_tv_on_today
 office:
   name: Office
   entities:
@@ -38,3 +39,8 @@ patio:
   name: Patio
   entities:
     - switch.ge_patio_switch_switch
+roomba:
+  name: Roomba
+  entities: 
+    - vacuum.roomba
+    - sensor.roomba_runtime_today

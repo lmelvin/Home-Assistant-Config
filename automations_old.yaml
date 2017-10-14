@@ -1,5 +1,25 @@
+- alias: 'Vacation Mode (Night)'
+  initial_state: off
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:30:00"
+  action:
+    service: switch.turn_on
+    entity_id: switch.office_switch
+
+- alias: 'Vacation Mode (Day)'
+  initial_state: off
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: "-01:30:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.office_switch
+
 # Kill patio lights if it starts to rain
-- alias: Rain
+- alias: Started Raining
   trigger:
     - platform: state
       entity_id: sensor.dark_sky_precip

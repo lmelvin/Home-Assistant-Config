@@ -3,7 +3,9 @@ patio_door:
   done_message: Patio door is closed
   entity_id: binary_sensor.patio_sensor_patio
   state: 'on'
-  repeat: 2
+  repeat: 
+    - 2
+    - 10
   can_acknowledge: True
   skip_first: True
   notifiers:

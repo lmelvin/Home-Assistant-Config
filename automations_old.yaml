@@ -5,8 +5,10 @@
       event: sunset
       offset: "-00:30:00"
   action:
-    service: switch.turn_on
-    entity_id: switch.office_switch
+    - service: switch.turn_on
+      entity_id: switch.office_switch
+    - service: light.turn_on
+      entity_id: light.centralite_4257050rzhac_04483b08_1
 
 - alias: 'Vacation Mode (Day)'
   initial_state: off
@@ -15,8 +17,10 @@
       event: sunrise
       offset: "-01:30:00"
   action:
-    service: switch.turn_off
-    entity_id: switch.office_switch
+    - service: switch.turn_off
+      entity_id: switch.office_switch
+    - service: light.turn_off
+      entity_id: light.centralite_4257050rzhac_04483b08_1
 
 # Kill patio lights if it starts to rain
 - alias: Started Raining

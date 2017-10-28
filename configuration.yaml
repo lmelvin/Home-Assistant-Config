@@ -47,6 +47,12 @@ zha:
   usb_path: /dev/ttyUSB1
   database_path: /config/zigbee.db
 
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret configurator_url
+
 # INCLUDES
 alert: !include alerts.yaml
 automation: !include automations.yaml

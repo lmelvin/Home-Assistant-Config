@@ -18,6 +18,7 @@ media_player.bedroom:
   friendly_name: Bedroom Chromecast
 sensor.living_room_thermostat_humidity:
   friendly_name: Living Room Humidity
+  icon: mdi:water-percent
 sensor.living_room_thermostat_target:
   friendly_name: Living Room Target
   hidden: true

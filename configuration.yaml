@@ -27,6 +27,7 @@ history:
 logbook:
 sun:
 updater:
+hassio:
 
 http:  
   api_password: !secret api_password
@@ -44,7 +45,7 @@ zwave:
 
 zha:
   usb_path: /dev/ttyUSB1
-  database_path: /home/homeassistant/.homeassistant/zigbee.db
+  database_path: /config/zigbee.db
 
 # INCLUDES
 alert: !include alerts.yaml
@@ -53,7 +54,6 @@ automation old: !include automations_old.yaml
 binary_sensor: !include binary_sensors.yaml
 device_tracker: !include device_trackers.yaml
 group: !include groups.yaml
-mqtt: !include mqtt.yaml
 nest: !include nest.yaml
 remote: !include remotes.yaml
 script: !include scripts.yaml

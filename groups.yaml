@@ -4,6 +4,7 @@ livingroom_view:
   view: yes
   entities:
     - group.living_room
+    - group.roomba
 bedroom_view:
   name: BedRoom
   view: yes

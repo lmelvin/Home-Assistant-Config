@@ -28,6 +28,14 @@ logbook:
 sun:
 updater:
 hassio:
+recorder:
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+      - group
+      - script
 
 http:  
   api_password: !secret api_password

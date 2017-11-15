@@ -57,3 +57,5 @@ zwave.ge_patio_switch:
   hidden: true
 zwave.patio_sensor:
   hidden: true
+switch.wemo_2:
+  friendly_name: Christmas Tree

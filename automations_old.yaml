@@ -1,3 +1,12 @@
+- alias: 'Christmas Tree On'
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:30:00"
+  action:
+    - service: switch.turn_on
+      entity_id: switch.wemo_2
+
 - alias: 'Vacation Mode (Night)'
   initial_state: off
   trigger:
@@ -53,6 +62,8 @@
   action:
     - service: remote.turn_off
       entity_id: group.all_remotes
+    - service: switch.turn_off
+      entity_id: switch.wemo_2
     - service: script.set_nest_away
 #     only turn these off if it's light outside
     - condition: sun
@@ -95,8 +106,8 @@
     platform: sun
     event: sunset
   action:
-    service: switch.turn_on
-    entity_id: switch.ge_patio_switch_switch
+    - service: switch.turn_on
+      entity_id: switch.ge_patio_switch_switch
 
 # Turn off patio lights at sunrise
 - alias: Turn Off Patio Lights At Sunrise

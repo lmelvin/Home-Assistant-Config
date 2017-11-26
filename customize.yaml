@@ -59,3 +59,5 @@ zwave.patio_sensor:
   hidden: true
 switch.wemo_2:
   friendly_name: Christmas Tree
+media_player.living_room:
+  friendly_name: Living Room Chromecast

@@ -40,3 +40,14 @@
       turn_off:
         service: remote.turn_off
         entity_id: remote.living_room_harmony
+    arlo_mode:
+      friendly_name: 'Arlo Armed'
+      value_template: "{{ is_state('alarm_control_panel.arlo_base', 'armed_away') }}"
+      turn_on:
+        service: alarm_control_panel.alarm_arm_away
+        data:
+          entity_id: alarm_control_panel.arlo_base
+      turn_off:
+        service: alarm_control_panel.alarm_disarm
+        data:
+          entity_id: alarm_control_panel.arlo_base

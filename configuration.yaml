@@ -57,9 +57,18 @@ zha:
 
 panel_iframe:
   configurator:
-    title: Configurator
+    title: Edit
     icon: mdi:wrench
     url: !secret configurator_url
+
+ffmpeg:
+
+arlo:
+  username: !secret arlo_un
+  password: !secret arlo_pw
+
+alarm_control_panel:
+  - platform: arlo
 
 # INCLUDES
 alert: !include alerts.yaml

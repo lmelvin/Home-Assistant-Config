@@ -3,7 +3,6 @@
   units: us
   monitored_conditions:
     - precip_type
-    - precip_intensity
     - temperature
     - nearest_storm_distance
     - humidity

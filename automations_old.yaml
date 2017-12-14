@@ -48,7 +48,7 @@
       data_template:
         message: 'Rain automation triggered! {{ as_timestamp(now()) | timestamp_custom("%m-%d-%Y %I:%M:%S %p", true) }}'
 
-# turn off stuff when everyone leaves
+# Everyone leaves
 - alias: 'Everyone Is Away'
   trigger:
     platform: state
@@ -57,9 +57,11 @@
     to: 'not_home'
     for:
       hours: 0
-      minutes: 5
+      minutes: 3
       seconds: 0
   action:
+    - service: alarm_control_panel.alarm_arm_away
+      entity_id: alarm_control_panel.arlo_base
     - service: remote.turn_off
       entity_id: group.all_remotes
     - service: switch.turn_off
@@ -81,6 +83,32 @@
     service: notify.push
     data:
       message: Home Assistant started.
+
+# Announce when patio door opens
+- alias: 'Announce Patio Door Open'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: binary_sensor.patio_sensor_patio
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.lan
+    data:
+      message: Patio Door Opened.
+
+# Announce when front door opens
+- alias: 'Announce Front Door Open'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: binary_sensor.front_door_sensor_sensor
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.lan
+    data:
+      message: Front Door Opened.
 
 # Notify when a door opens when nobody is home
 - alias: 'Notify When Door Opens While Everyone is Away'
@@ -114,6 +142,7 @@
   trigger:
     platform: sun
     event: sunrise
+    offset: "-01:30:00"
   action:
     service: switch.turn_off
     entity_id: switch.ge_patio_switch_switch

@@ -25,12 +25,14 @@ living_room:
     - climate.living_room
     - sensor.living_room_thermostat_humidity
     - sensor.living_room_tv_on_today
+    - switch.wemo_2
+    - light.accent_light
 bedroom:
   name: Bedroom
   entities:
     - remote.bedroom_harmony
     - media_player.bedroom
-    - light.centralite_4257050rzhac_04483b08_1
+    - light.bedroom_lamp
     - sensor.bedroom_tv_on_today
 office:
   name: Office

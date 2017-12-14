@@ -44,6 +44,9 @@ notify:
   - platform: pushbullet
     name: push
     api_key: !secret pushbullet_key
+  - platform: lannouncer
+    name: lan
+    host: !secret lannouncer_ip
 
 tts:
   platform: google
@@ -57,7 +60,7 @@ zha:
 
 panel_iframe:
   configurator:
-    title: Edit
+    title: Edit Config
     icon: mdi:wrench
     url: !secret configurator_url
 
@@ -68,6 +71,9 @@ arlo:
   password: !secret arlo_pw
 
 alarm_control_panel:
+  - platform: arlo
+
+camera:
   - platform: arlo
 
 # INCLUDES

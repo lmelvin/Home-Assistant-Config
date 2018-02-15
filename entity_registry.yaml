@@ -1,0 +1,72 @@
+switch.ge_patio_switch_switch:
+  platform: zwave
+  unique_id: 2-72057594076282880
+binary_sensor.zwone_patio_door:
+  platform: zwave
+  unique_id: 3-72057594093240320
+sensor.zwone_alarm_type:
+  platform: zwave
+  unique_id: 3-72057594094305281
+sensor.zwone_alarm_level:
+  platform: zwave
+  unique_id: 3-72057594094305297
+sensor.zwone_sourcenodeid:
+  platform: zwave
+  unique_id: 3-72057594094305313
+sensor.zwone_access_control:
+  platform: zwave
+  unique_id: 3-72057594094305425
+sensor.zwone_burglar:
+  platform: zwave
+  unique_id: 3-72057594094305441
+sensor.zwone_power_management:
+  platform: zwave
+  unique_id: 3-72057594094305457
+binary_sensor.zwtwo_front_door:
+  platform: zwave
+  unique_id: 4-72057594110017536
+sensor.zwtwo_alarm_type:
+  platform: zwave
+  unique_id: 4-72057594111082497
+sensor.zwtwo_alarm_level:
+  platform: zwave
+  unique_id: 4-72057594111082513
+sensor.zwtwo_sourcenodeid:
+  platform: zwave
+  unique_id: 4-72057594111082529
+sensor.zwtwo_access_control:
+  platform: zwave
+  unique_id: 4-72057594111082641
+sensor.zwtwo_burglar:
+  platform: zwave
+  unique_id: 4-72057594111082657
+sensor.zwtwo_power_management:
+  platform: zwave
+  unique_id: 4-72057594111082673
+switch.zwthree_patio_light:
+  platform: zwave
+  unique_id: 5-72057594126614528
+switch.zwfour_dining_light:
+  platform: zwave
+  unique_id: 6-72057594143391744
+switch.zwfive_hall_light:
+  platform: zwave
+  unique_id: 7-72057594160168960
+switch.zwsix_kitchen_light:
+  platform: zwave
+  unique_id: 8-72057594176946176
+light.bedroom_1:
+  platform: hue
+  unique_id: 00:17:88:01:03:5b:98:49-0b
+light.accent_light:
+  platform: hue
+  unique_id: 00:17:88:01:02:da:ac:21-0b
+light.bedroom_2:
+  platform: hue
+  unique_id: 00:17:88:01:02:a9:a4:f2-0b
+light.bedroom_lamp:
+  platform: hue
+  unique_id: 00:17:88:01:03:5b:a1:be-0b
+light.bedroom_3:
+  platform: hue
+  unique_id: 00:17:88:01:02:a9:c3:9d-0b

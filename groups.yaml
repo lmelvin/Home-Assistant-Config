@@ -5,43 +5,21 @@ livingroom_view:
   entities:
     - group.living_room
     - group.roomba
-bedroom_view:
-  name: BedRoom
+cameras_view:
+  name: Cameras
   view: yes
   entities:
-    - group.bedroom
-office_view:
-  name: Office
-  view: yes
-  entities:
-    - group.office
+    - alarm_control_panel.arlo_base
+    - camera.lr_1
+    - camera.4xh57872a5b56
+
 #GROUPS
 living_room:
   name: Living Room
   entities:
-    - remote.living_room_harmony
-    - media_player.pn59d6500_pn59d6500
+    - remote.living_room
     - media_player.living_room
-    - climate.living_room
-    - sensor.living_room_thermostat_humidity
     - sensor.living_room_tv_on_today
-    - switch.wemo_2
-    - light.accent_light
-bedroom:
-  name: Bedroom
-  entities:
-    - remote.bedroom_harmony
-    - media_player.bedroom
-    - light.bedroom_lamp
-    - sensor.bedroom_tv_on_today
-office:
-  name: Office
-  entities:
-    - switch.office_switch
-patio:
-  name: Patio
-  entities:
-    - switch.ge_patio_switch_switch
 roomba:
   name: Roomba
   entities: 

@@ -8,10 +8,6 @@ sensor.dark_sky_temperature:
   friendly_name: Outside Temp
 sensor.dark_sky_precip_intensity:
   friendly_name: Precip Intensity
-switch.ge_patio_switch_switch:
-  friendly_name: Patio Switch
-switch.wemo_switch:
-  friendly_name: Office Lamp
 media_player.bedroom:
   friendly_name: Bedroom Chromecast
 sensor.living_room_thermostat_humidity:
@@ -35,34 +31,75 @@ binary_sensor.roomba_bin_full:
   hidden: true
 sensor.roomba_battery:
   hidden: true
-switch.living_room_chromecast:
-  hidden: true
-switch.living_room_tv:
-  hidden: true
-switch.bedroom_chromecast:
-  hidden: true
-switch.bedroom_tv:
-  hidden: true
 sensor.roomba_status:
   hidden: true
 zwave.sigma_designs_uzb_zwave_usb_adapter:
   hidden: true
 zwave.front_door_sensor:
   hidden: true
-zwave.ge_patio_switch:
-  hidden: true
 zwave.patio_sensor:
   hidden: true
-switch.wemo_2:
-  friendly_name: Christmas Tree
 media_player.living_room:
   friendly_name: Living Room Chromecast
-light.centralite_4257050rzhac_04483b08_1:
-  friendly_name: Zigbee Switch
-  hidden: true
 light.hue_white_lamp_1:
   hidden: true
 light.hue_white_lamp_4:
   hidden: true
 light.office_lamp:
+  hidden: true
+binary_sensor.zwone_patio_door:
+  friendly_name: Patio Door
+binary_sensor.zwtwo_front_door:
+  friendly_name: Front Door
+remote.living_room:
+  friendly_name: Living Room TV
+sensor.zwtwo_access_control:
+  hidden: true
+sensor.zwtwo_alarm_level:
+  hidden: true
+sensor.zwtwo_alarm_type:
+  hidden: true
+sensor.zwtwo_burglar:
+  hidden: true
+sensor.zwtwo_power_management:
+  hidden: true
+sensor.zwtwo_sourcenodeid:
+  hidden: true
+sensor.zwone_access_control:
+  hidden: true
+sensor.zwone_alarm_level:
+  hidden: true
+sensor.zwone_alarm_type:
+  hidden: true
+sensor.zwone_burglar:
+  hidden: true
+sensor.zwone_power_management:
+  hidden: true
+sensor.zwone_sourcenodeid:
+  hidden: true
+switch.zwthree_patio_light:
+  friendly_name: Patio Light
+switch.zwfour_dining_light:
+  friendly_name: Dining Light
+camera.4xh57872a5b56:
+  friendly_name: Living Room Camera
+camera.lr_1:
+  friendly_name: Porch Camera
+switch.zwfive_hall_light:
+  friendly_name: Hall Light
+switch.zwsix_kitchen_light:
+  friendly_name: Kitchen Light
+light.bedroom_1:
+  hidden: true
+light.bedroom_2:
+  hidden: true
+light.bedroom_3:
+  hidden: true
+light.accent_light:
+  hidden: true
+light.bedroom_lamp:
+  hidden: true
+switch.living_room_tv:
+  hidden: true
+switch.living_room_chromecast:
   hidden: true

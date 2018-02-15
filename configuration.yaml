@@ -22,6 +22,8 @@ conversation:
 discovery:
   ignore:
     - samsung_tv
+    - directv
+    - harmony
 frontend:
 history:
 logbook:
@@ -54,15 +56,25 @@ tts:
 zwave:
   usb_path: /dev/ttyUSB0
 
-zha:
-  usb_path: /dev/ttyUSB1
-  database_path: /config/zigbee.db
+#zha:
+#  usb_path: /dev/ttyUSB1
+#  database_path: /config/zigbee.db
 
 panel_iframe:
   configurator:
-    title: Edit Config
+    title: Edit
     icon: mdi:wrench
     url: !secret configurator_url
+
+hue:
+  bridges:
+    - host: !secret hue_ip
+
+weblink:
+  entities:
+    - name: Arlo
+      url: 'https://arlo.netgear.com/#/cameras'
+      icon: mdi:cctv
 
 ffmpeg:
 
@@ -72,9 +84,16 @@ arlo:
 
 alarm_control_panel:
   - platform: arlo
+    home_mode_name: Home
 
 camera:
   - platform: arlo
+
+#cover:
+#  - platform: myq
+#    username: cindyspip@hotmail.com
+#    password: Mydoors1
+#    type: chamberlain
 
 # INCLUDES
 alert: !include alerts.yaml
@@ -83,7 +102,7 @@ automation old: !include automations_old.yaml
 binary_sensor: !include binary_sensors.yaml
 device_tracker: !include device_trackers.yaml
 group: !include groups.yaml
-nest: !include nest.yaml
+#nest: !include nest.yaml
 remote: !include remotes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml

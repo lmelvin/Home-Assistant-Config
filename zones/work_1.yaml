@@ -1,4 +1,0 @@
-name: !secret zone_work1_name
-latitude: !secret zone_work1_latitude
-longitude: !secret zone_work1_longitude
-radius: 300

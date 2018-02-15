@@ -1,60 +1,10 @@
-- alias: 'Christmas Tree On'
-  trigger:
-    - platform: sun
-      event: sunset
-      offset: "-00:30:00"
-  action:
-    - service: switch.turn_on
-      entity_id: switch.wemo_2
-
-- alias: 'Vacation Mode (Night)'
-  initial_state: off
-  trigger:
-    - platform: sun
-      event: sunset
-      offset: "-00:30:00"
-  action:
-    - service: switch.turn_on
-      entity_id: switch.office_switch
-    - service: light.turn_on
-      entity_id: light.centralite_4257050rzhac_04483b08_1
-
-- alias: 'Vacation Mode (Day)'
-  initial_state: off
-  trigger:
-    - platform: sun
-      event: sunrise
-      offset: "-05:00:00"
-  action:
-    - service: switch.turn_off
-      entity_id: switch.office_switch
-    - service: light.turn_off
-      entity_id: light.centralite_4257050rzhac_04483b08_1
-
-# Kill patio lights if it starts to rain
-- alias: Started Raining
-  trigger:
-    - platform: state
-      entity_id: sensor.dark_sky_precip
-      to: 'rain'
-  condition:
-    - condition: state
-      entity_id: switch.ge_patio_switch_switch
-      state: 'on'
-  action:
-    - service: switch.turn_off
-      entity_id: switch.ge_patio_switch_switch
-    - service: notify.push
-      data_template:
-        message: 'Rain automation triggered! {{ as_timestamp(now()) | timestamp_custom("%m-%d-%Y %I:%M:%S %p", true) }}'
-
 # Everyone leaves
 - alias: 'Everyone Is Away'
   trigger:
     platform: state
     entity_id: group.all_devices
-    from: 'home'
-    to: 'not_home'
+    from: home
+    to: not_home
     for:
       hours: 0
       minutes: 3
@@ -65,13 +15,7 @@
     - service: remote.turn_off
       entity_id: group.all_remotes
     - service: switch.turn_off
-      entity_id: switch.wemo_2
-    - service: script.set_nest_away
-#     only turn these off if it's light outside
-    - condition: sun
-      after: sunrise
-    - service: switch.turn_off
-      entity_id: switch.office_switch
+      entity_id: group.all_switches
 
 # Notify when HASS starts up
 - alias: 'Home Assistant Startup'
@@ -89,7 +33,7 @@
   hide_entity: True
   trigger:
     platform: state
-    entity_id: binary_sensor.patio_sensor_patio
+    entity_id: binary_sensor.zwone_patio_door
     from: 'off'
     to: 'on'
   action:
@@ -102,7 +46,7 @@
   hide_entity: True
   trigger:
     platform: state
-    entity_id: binary_sensor.front_door_sensor_sensor
+    entity_id: binary_sensor.zwtwo_front_door
     from: 'off'
     to: 'on'
   action:
@@ -112,11 +56,12 @@
 
 # Notify when a door opens when nobody is home
 - alias: 'Notify When Door Opens While Everyone is Away'
+  hide_entity: False
   trigger:
     platform: state
     entity_id: 
-      - binary_sensor.front_door_sensor_sensor
-      - binary_sensor.patio_sensor_patio
+      - binary_sensor.zwtwo_front_door
+      - binary_sensor.zwone_patio_door
     from: 'off'
     to: 'on'
   condition:
@@ -128,43 +73,11 @@
     data_template:
       message: '{{ trigger.to_state.name }} opened while everyone is away at {{ as_timestamp(now()) | timestamp_custom("%m-%d-%Y %I:%M:%S %p", true) }}'
 
-# Turn on patio lights at sunset
-- alias: 'Turn On Patio Lights At Sunset'
-  trigger:
-    platform: sun
-    event: sunset
-  action:
-    - service: switch.turn_on
-      entity_id: switch.ge_patio_switch_switch
-
-# Turn off patio lights at sunrise
-- alias: Turn Off Patio Lights At Sunrise
-  trigger:
-    platform: sun
-    event: sunrise
-    offset: "-01:30:00"
-  action:
-    service: switch.turn_off
-    entity_id: switch.ge_patio_switch_switch
-
-# Notify if a zwave contact sensor gets low on battery
-- alias: Notify If A Door Sensor Has Low Battery
-  trigger: 
-    platform: numeric_state
-    entity_id:
-      - zwave.front_door_sensor
-      - zwave.patio_sensor
-    value_template: '{{ state.attributes.battery_level }}'
-    below: 6
-  action:
-    service: notify.push
-    data_template:
-      message: '{{ trigger.to_state.name }} is low on battery ({{ trigger.to_state.attributes.battery_level }}%)'
-
+# Run roomba every day at noon
 - alias: Run Roomba
   trigger:
     - platform: time
-      at: '14:00:00'
+      at: '12:00:00'
   action:
     service: vacuum.turn_on
     entity_id: vacuum.roomba

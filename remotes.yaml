@@ -1,8 +1,4 @@
 - platform: harmony
-  name: Living Room Harmony
+  name: Living Room
+  host: !secret harmony_living_room_ip
   activity: Watch TV
-  scan_interval: 15
-- platform: harmony
-  name: Bedroom Harmony
-  activity: Bedroom TV
-  scan_interval: 15

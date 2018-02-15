@@ -1,45 +1,42 @@
-set_nest_away:
-  alias: Set Nest Away
-  sequence:
-    - service: nest.set_mode
-      data:
-        home_mode: away
-
-set_nest_home:
-  alias: Set Nest Home
-  sequence:
-    - service: nest.set_mode
-      data:
-        home_mode: home
-
-set_nest_off:
-  alias: Set Nest to Off
-  sequence:
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.living_room
-        operation_mode: "off"
-
-set_nest_cool:
-  alias: Set Nest to Cool
-  sequence:
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.living_room
-        operation_mode: "cool"
-
-mute_bedroom_tv:
-  alias: Mute Bedroom TV
-  sequence:
-    - service: remote.send_command
-      data:
-        entity_id: remote.bedroom_harmony
-        device: 47285708
-        command: Mute
-
 roomba_return_home:
   alias: Roomba Return Home
   sequence:
-    - service: vacuum.return_to_base
-      data:
-        entity_id: vacuum.roomba
+  - service: vacuum.return_to_base
+    data:
+      entity_id: vacuum.roomba
+'1518251923813':
+  alias: Morning
+  sequence:
+  - data:
+      entity_id: alarm_control_panel.arlo_base
+    service: alarm_control_panel.alarm_disarm
+  - data:
+      entity_id: remote.living_room
+    service: remote.turn_on
+  - data:
+      entity_id: switch.zwsix_kitchen_light
+    service: switch.turn_on
+  - data:
+      entity_id: switch.zwfour_dining_light
+    service: switch.turn_on
+  - data:
+      command:
+      - 2
+      - 0
+      - 2
+      delay_secs: 0.5
+      device: 52276278
+      entity_id: remote.living_room
+    service: remote.send_command
+'1518258307834':
+  alias: Night
+  sequence:
+  - data:
+      entity_id: group.all_remotes
+    service: remote.turn_off
+  - data:
+      entity_id: group.all_switches
+    service: switch.turn_off
+  - data:
+      entity_id: alarm_control_panel.arlo_base
+    service: alarm_control_panel.alarm_arm_away

@@ -88,6 +88,11 @@ alarm_control_panel:
 
 camera:
   - platform: arlo
+  - platform: ring
+
+ring:
+  username: !secret ring_un
+  password: !secret ring_pw
 
 #cover:
 #  - platform: myq

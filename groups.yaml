@@ -12,6 +12,8 @@ cameras_view:
     - alarm_control_panel.arlo_base
     - camera.lr_1
     - camera.4xh57872a5b56
+    - camera.front_door
+    - camera.driveway
 
 #GROUPS
 living_room:
@@ -25,3 +27,11 @@ roomba:
   entities: 
     - vacuum.roomba
     - sensor.roomba_runtime_today
+lights:
+  name: Lights
+  entities: 
+    - switch.zwfour_dining_light
+    - switch.zwfive_hall_light
+    - switch.zwsix_kitchen_light
+    - switch.zwthree_patio_light
+    - light.bedroom_ceiling_fan

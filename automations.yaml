@@ -4,7 +4,9 @@
     service: alarm_control_panel.alarm_arm_home
   - data:
       entity_id: switch.zwfive_hall_light
-    entity_id: switch.zwfive_hall_light
+    service: switch.turn_on
+  - data:
+      entity_id: switch.zwfour_dining_light
     service: switch.turn_on
   - condition: state
     entity_id: remote.living_room

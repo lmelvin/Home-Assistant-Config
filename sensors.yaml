@@ -29,3 +29,6 @@
     roomba_status:
       friendly_name: Roomba Status
       value_template: "{{ states.vacuum.roomba.attributes.status }}"
+- platform: ring
+  monitored_conditions:
+    - last_motion

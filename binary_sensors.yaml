@@ -3,3 +3,6 @@
     roomba_bin_full:
       friendly_name: Roomba Bin Full
       value_template: "{{ states.vacuum.roomba.attributes.bin_full }}"
+- platform: ring
+  monitored_conditions:
+    - motion

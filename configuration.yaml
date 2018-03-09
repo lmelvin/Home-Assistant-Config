@@ -41,6 +41,10 @@ recorder:
 
 http:  
   api_password: !secret api_password
+  server_port: !secret hass_port
+  base_url: !secret base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
 
 notify:
   - platform: pushbullet
@@ -56,9 +60,9 @@ tts:
 zwave:
   usb_path: /dev/ttyUSB0
 
-#zha:
-#  usb_path: /dev/ttyUSB1
-#  database_path: /config/zigbee.db
+zha:
+  usb_path: /dev/ttyUSB1
+  database_path: /config/zigbee.db
 
 panel_iframe:
   configurator:

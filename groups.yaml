@@ -5,15 +5,17 @@ livingroom_view:
   entities:
     - group.living_room
     - group.roomba
-cameras_view:
-  name: Cameras
+lights_view:
+  name: Lights
   view: yes
   entities:
-    - alarm_control_panel.arlo_base
-    - camera.lr_1
-    - camera.4xh57872a5b56
-    - camera.front_door
-    - camera.driveway
+    - group.lights
+
+garage_view:
+  name: Garage
+  view: yes
+  entities:
+    - group.garage
 
 #GROUPS
 living_room:
@@ -35,3 +37,9 @@ lights:
     - switch.zwsix_kitchen_light
     - switch.zwthree_patio_light
     - light.bedroom_ceiling_fan
+garage:
+  name: Garage
+  entities:
+    - cover.truck_garage_door
+    - sensor.truck_garage_status
+    - sensor.garage_car_present

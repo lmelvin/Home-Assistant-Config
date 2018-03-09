@@ -70,3 +70,6 @@ light.bedroom_lamp:
 light.bedroom_3:
   platform: hue
   unique_id: 00:17:88:01:02:a9:c3:9d-0b
+media_player.living_room:
+  platform: cast
+  unique_id: dab95fab-9141-c97b-5d89-686940793913

@@ -1,15 +1,29 @@
-# Turn off porch camera when outside
-- alias: 'Turn of cameras when door is open'
+# Turn patio camera off when outside
+- alias: 'Turn off cameras when door is open'
   trigger:
     platform: state
     entity_id: binary_sensor.zwone_patio_door
     to: 'on'
   condition:
     condition: state
-    entity_id: group.all_devices
+    entity_id: device_tracker.samsungsmg935a
     state: 'home'
   action:
     - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.arlo_base
+
+#Turn patio camera on when door shuts
+- alias: 'Turn on camera when door closes'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.zwone_patio_door
+    to: 'off'
+  condition:
+    condition: state
+    entity_id: device_tracker.samsungsmg935a
+    state: 'home'
+  action:
+    - service: alarm_control_panel.alarm_arm_home
       entity_id: alarm_control_panel.arlo_base
 
 # Everyone leaves

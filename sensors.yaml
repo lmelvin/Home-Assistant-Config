@@ -29,6 +29,54 @@
     roomba_status:
       friendly_name: Roomba Status
       value_template: "{{ states.vacuum.roomba.attributes.status }}"
-- platform: ring
-  monitored_conditions:
-    - last_motion
+    
+    truck_garage_status:
+      friendly_name: 'Truck Door Status'
+      value_template: '{% if states.cover.truck_garage_door %}
+          {% if states.cover.truck_garage_door.attributes["door_state"] == "open" %}
+            Open
+          {% elif states.cover.truck_garage_door.attributes["door_state"] == "closed" %}
+            Closed
+          {% elif states.cover.truck_garage_door.attributes["door_state"] == "opening" %}
+            Opening
+          {% elif states.cover.truck_garage_door.attributes["door_state"] == "closing" %}
+            Closing
+          {% else %}
+            Unknown
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+    garage_car_present:
+      friendly_name: 'Truck in Garage'
+      value_template: '{% if states.cover.truck_garage_door %}
+          {% if states.cover.truck_garage_door.state == "open" %}
+            n/a
+          {% elif ((states.cover.truck_garage_door.attributes["distance_sensor"] > 40) and (states.cover.truck_garage_door.attributes["distance_sensor"] < 150)) %}
+            Yes
+          {% else %}
+            No
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+- platform: crimereports
+  name: Crime Reports
+  radius: 2000
+  include:
+    - Arson
+    - Assault with Deadly Weapon
+    - Breaking & Entering
+    - Drugs
+    - Fire
+    - Homicide
+    - Kidnapping
+    - Other Sexual Offense
+    - Property Crime
+    - Property Crime Residential
+    - Robbery
+    - Sexual Assault
+    - Sexual Offense
+    - Theft
+    - Theft from Vehicle
+    - Theft of Vehicle

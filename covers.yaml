@@ -1,0 +1,6 @@
+- platform: opengarage
+  covers:
+    garage:
+      host:  !secret truck_door_ip
+      device_key: opendoor
+      name:  Truck Garage Door

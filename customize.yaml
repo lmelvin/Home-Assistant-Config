@@ -103,3 +103,9 @@ switch.living_room_tv:
   hidden: true
 switch.living_room_chromecast:
   hidden: true
+binary_sensor.ring_driveway_motion:
+  hidden: true
+binary_sensor.ring_front_door_motion:
+  hidden: true
+sensor.garage_car_present:
+  icon: mdi:car

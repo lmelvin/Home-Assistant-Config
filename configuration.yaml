@@ -86,25 +86,25 @@ alarm_control_panel:
   - platform: arlo
     home_mode_name: Home
 
-camera:
-  - platform: arlo
-  - platform: ring
+#camera:
+  #- platform: arlo
+  #- platform: ring
 
 ring:
   username: !secret ring_un
   password: !secret ring_pw
 
-#cover:
-#  - platform: myq
-#    username: cindyspip@hotmail.com
-#    password: Mydoors1
-#    type: chamberlain
+namecheapdns:
+  host: !secret namecheap_host_1
+  domain: !secret namecheap_domain_1
+  password: !secret namecheap_password_1
 
 # INCLUDES
 alert: !include alerts.yaml
 automation: !include automations.yaml
 automation old: !include automations_old.yaml
 binary_sensor: !include binary_sensors.yaml
+cover: !include covers.yaml
 device_tracker: !include device_trackers.yaml
 group: !include groups.yaml
 #nest: !include nest.yaml

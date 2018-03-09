@@ -4,8 +4,8 @@ patio_door:
   entity_id: binary_sensor.zwone_patio_door
   state: 'on'
   repeat: 
-    - 2
-    - 10
+    - 5
+    - 15
   can_acknowledge: True
   skip_first: True
   notifiers:

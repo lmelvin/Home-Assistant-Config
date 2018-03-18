@@ -1,0 +1,29 @@
+alexa:
+  filter:
+    exclude_entities:
+      - light.bedroom_1
+      - light.bedroom_2
+      - light.bedroom_3
+      - group.roomba
+      - group.garage_view
+      - group.garage
+      - group.all_devices
+      - automation.announce_patio_door_open
+      - light.bedroom_lamp
+      - light.accent_light
+      - automation.turn_on_camera_when_door_closes
+      - alert.patio_door
+      - group.lights_view
+      - automation.notify_when_door_opens_while_everyone_is_away
+      - group.all_vacuum_cleaners
+      - group.livingroom_view
+      - automation.home_assistant_startup
+      - automation.announce_front_door_open
+      - automation.someone_comes_home
+      - group.living_room
+      - automation.turn_off_cameras_when_door_is_open
+      - automation.run_roomba
+      - automation.everyone_is_away
+      - group.all_scripts
+      - group.all_automations
+      - sensor.dark_sky_temperature

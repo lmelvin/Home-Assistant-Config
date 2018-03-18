@@ -60,23 +60,3 @@
           {% else %}
           n/a
           {% endif %}'
-- platform: crimereports
-  name: Crime Reports
-  radius: 2000
-  include:
-    - Arson
-    - Assault with Deadly Weapon
-    - Breaking & Entering
-    - Drugs
-    - Fire
-    - Homicide
-    - Kidnapping
-    - Other Sexual Offense
-    - Property Crime
-    - Property Crime Residential
-    - Robbery
-    - Sexual Assault
-    - Sexual Offense
-    - Theft
-    - Theft from Vehicle
-    - Theft of Vehicle

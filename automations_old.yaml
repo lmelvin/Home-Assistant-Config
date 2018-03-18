@@ -6,7 +6,7 @@
     to: 'on'
   condition:
     condition: state
-    entity_id: device_tracker.samsungsmg935a
+    entity_id: device_tracker.galaxy_s9
     state: 'home'
   action:
     - service: alarm_control_panel.alarm_disarm
@@ -20,7 +20,7 @@
     to: 'off'
   condition:
     condition: state
-    entity_id: device_tracker.samsungsmg935a
+    entity_id: device_tracker.galaxy_s9
     state: 'home'
   action:
     - service: alarm_control_panel.alarm_arm_home
@@ -60,29 +60,31 @@
 
 # Announce when patio door opens
 - alias: 'Announce Patio Door Open'
-  hide_entity: True
+  hide_entity: False
   trigger:
     platform: state
     entity_id: binary_sensor.zwone_patio_door
     from: 'off'
     to: 'on'
   action:
-    service: notify.lan
-    data:
-      message: Patio Door Opened.
+    - service: tts.google_say
+      entity_id: media_player.googlehome9280
+      data:
+        message: Patio Door Opened
 
 # Announce when front door opens
 - alias: 'Announce Front Door Open'
-  hide_entity: True
+  hide_entity: False
   trigger:
     platform: state
     entity_id: binary_sensor.zwtwo_front_door
     from: 'off'
     to: 'on'
   action:
-    service: notify.lan
-    data:
-      message: Front Door Opened.
+    - service: tts.google_say
+      entity_id: media_player.googlehome9280
+      data:
+        message: Front Door Opened
 
 # Notify when a door opens when nobody is home
 - alias: 'Notify When Door Opens While Everyone is Away'

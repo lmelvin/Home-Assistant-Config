@@ -109,3 +109,5 @@ binary_sensor.ring_front_door_motion:
   hidden: true
 sensor.garage_car_present:
   icon: mdi:car
+media_player.googlehome9280:
+  friendly_name: Google Home

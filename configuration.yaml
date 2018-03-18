@@ -56,6 +56,7 @@ notify:
 
 tts:
   platform: google
+  time_memory: 57600
 
 zwave:
   usb_path: /dev/ttyUSB0
@@ -79,6 +80,8 @@ weblink:
     - name: Arlo
       url: 'https://arlo.netgear.com/#/cameras'
       icon: mdi:cctv
+    - name: Ring
+      url: 'https://ring.com/account/activity'
 
 ffmpeg:
 
@@ -109,6 +112,7 @@ automation: !include automations.yaml
 automation old: !include automations_old.yaml
 binary_sensor: !include binary_sensors.yaml
 cover: !include covers.yaml
+cloud: !include cloud.yaml
 device_tracker: !include device_trackers.yaml
 group: !include groups.yaml
 #nest: !include nest.yaml

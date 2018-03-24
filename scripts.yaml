@@ -38,5 +38,8 @@ roomba_return_home:
       entity_id: group.all_switches
     service: switch.turn_off
   - data:
+      entity_id: group.all_covers
+    service: cover.close_cover
+  - data:
       entity_id: alarm_control_panel.arlo_base
     service: alarm_control_panel.alarm_arm_away

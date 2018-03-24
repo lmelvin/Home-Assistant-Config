@@ -111,3 +111,5 @@ sensor.garage_car_present:
   icon: mdi:car
 media_player.googlehome9280:
   friendly_name: Google Home
+device_tracker.galaxy_s9_2:
+  friendly_name: Mom

@@ -114,6 +114,7 @@ binary_sensor: !include binary_sensors.yaml
 cover: !include covers.yaml
 cloud: !include cloud.yaml
 device_tracker: !include device_trackers.yaml
+fan: !include fans.yaml
 group: !include groups.yaml
 #nest: !include nest.yaml
 remote: !include remotes.yaml

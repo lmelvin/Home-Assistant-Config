@@ -22,6 +22,10 @@
   end: '{{ now() }}'
 - platform: template
   sensors:
+    xiaomi_temp:
+      friendly_name: Living Room Temp
+      unit_of_measurement: '°'
+      value_template: "{{ states.fan.xiaomi_air_purifier.attributes.temperature * 9/5 + 32 }}"
     roomba_battery:
       friendly_name: Roomba Battery
       unit_of_measurement: "%"
@@ -29,7 +33,6 @@
     roomba_status:
       friendly_name: Roomba Status
       value_template: "{{ states.vacuum.roomba.attributes.status }}"
-    
     truck_garage_status:
       friendly_name: 'Truck Door Status'
       value_template: '{% if states.cover.truck_garage_door %}

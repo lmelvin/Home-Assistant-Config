@@ -58,6 +58,18 @@
     data:
       message: Home Assistant started.
 
+# Announce when garage door starts to open
+- alias: 'Announce Garage Door Opening'
+  hide_entity: False
+  trigger:
+    platform: template
+    value_template: "{% if states.cover.truck_garage_door.attributes['door_state'] == 'opening' %}true{% endif %}"
+  action:
+    - service: tts.google_say
+      entity_id: media_player.googlehome9280
+      data:
+        message: Garage Door Opening
+
 # Announce when patio door opens
 - alias: 'Announce Patio Door Open'
   hide_entity: False

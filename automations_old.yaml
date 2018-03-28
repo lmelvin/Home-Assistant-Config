@@ -70,33 +70,21 @@
       data:
         message: Garage Door Opening
 
-# Announce when patio door opens
-- alias: 'Announce Patio Door Open'
+# Announce when door opens
+- alias: 'Announce Door Open'
   hide_entity: False
   trigger:
     platform: state
-    entity_id: binary_sensor.zwone_patio_door
+    entity_id: 
+      - binary_sensor.zwtwo_front_door
+      - binary_sensor.zwone_patio_door
     from: 'off'
     to: 'on'
   action:
     - service: tts.google_say
       entity_id: media_player.googlehome9280
-      data:
-        message: Patio Door Opened
-
-# Announce when front door opens
-- alias: 'Announce Front Door Open'
-  hide_entity: False
-  trigger:
-    platform: state
-    entity_id: binary_sensor.zwtwo_front_door
-    from: 'off'
-    to: 'on'
-  action:
-    - service: tts.google_say
-      entity_id: media_player.googlehome9280
-      data:
-        message: Front Door Opened
+      data_template:
+        message: '{{ trigger.to_state.name }} opened'
 
 # Notify when a door opens when nobody is home
 - alias: 'Notify When Door Opens While Everyone is Away'

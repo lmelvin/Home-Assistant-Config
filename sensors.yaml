@@ -24,7 +24,7 @@
   sensors:
     xiaomi_temp:
       friendly_name: Living Room Temp
-      unit_of_measurement: '°'
+      unit_of_measurement: '°F'
       value_template: "{{ states.fan.xiaomi_air_purifier.attributes.temperature * 9/5 + 32 }}"
     roomba_battery:
       friendly_name: Roomba Battery

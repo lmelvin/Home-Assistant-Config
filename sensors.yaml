@@ -26,6 +26,10 @@
       friendly_name: Living Room Temp
       unit_of_measurement: '°F'
       value_template: "{{ states.fan.xiaomi_air_purifier.attributes.temperature * 9/5 + 32 }}"
+    xiaomi_air_quality:
+      friendly_name: Air Quality
+      unit_of_measurement: 'PM2.5'
+      value_template: "{{ states.fan.xiaomi_air_purifier.attributes.aqi }}"
     roomba_battery:
       friendly_name: Roomba Battery
       unit_of_measurement: "%"

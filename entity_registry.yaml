@@ -102,3 +102,19 @@ media_player.googlehome9280:
   name:
   platform: cast
   unique_id: 484926aa-77ec-0886-2be7-2a1dacbb39ae
+light.hue_ambiance_downlight_3:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:aa:0d:b8-0b
+light.hue_ambiance_downlight_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:aa:5e:23-0b
+light.hue_ambiance_downlight_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:f3:9f:10-0b
+light.hue_ambiance_downlight_4:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:02:f3:58:5d-0b

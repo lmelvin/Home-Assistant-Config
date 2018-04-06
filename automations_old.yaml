@@ -1,5 +1,6 @@
 # Turn patio camera off when outside
 - alias: 'Turn off cameras when door is open'
+  hide_entity: True
   trigger:
     platform: state
     entity_id: binary_sensor.zwone_patio_door
@@ -14,6 +15,7 @@
 
 #Turn patio camera on when door shuts
 - alias: 'Turn on camera when door closes'
+  hide_entity: True
   trigger:
     platform: state
     entity_id: binary_sensor.zwone_patio_door
@@ -28,6 +30,7 @@
 
 # Everyone leaves
 - alias: 'Everyone Is Away'
+  hide_entity: True
   trigger:
     platform: state
     entity_id: group.all_devices
@@ -60,7 +63,7 @@
 
 # Announce when door opens
 - alias: 'Announce Door Open'
-  hide_entity: False
+  hide_entity: True
   trigger:
     platform: state
     entity_id: 
@@ -76,7 +79,7 @@
 
 # Announce when garage door is open
 - alias: 'Announce Garage Door Is Open'
-  hide_entity: False
+  hide_entity: True
   trigger:
     platform: state
     entity_id: cover.truck_garage_door
@@ -90,7 +93,7 @@
 
 # Notify when a door opens when nobody is home
 - alias: 'Notify When Door Opens While Everyone is Away'
-  hide_entity: False
+  hide_entity: True
   trigger:
     platform: state
     entity_id: 

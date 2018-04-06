@@ -113,3 +113,27 @@ media_player.googlehome9280:
   friendly_name: Google Home
 device_tracker.galaxy_s9_2:
   friendly_name: Mom
+zwave.zwfive:
+  hidden: true
+zwave.zwfour:
+  hidden: true
+zwave.zwone:
+  hidden: true
+zwave.zwsix:
+  hidden: true
+zwave.ge_patio_switch:
+  hidden: true
+switch.ge_patio_switch_switch:
+  hidden: true
+zwave.zwtwo:
+  hidden: true
+zwave.zwthree:
+  hidden: true
+light.hue_ambiance_downlight_4:
+  hidden: true
+light.hue_ambiance_downlight_2:
+  hidden: true
+light.hue_ambiance_downlight_3:
+  hidden: true
+light.hue_ambiance_downlight_1:
+  hidden: true

@@ -16,6 +16,7 @@
       entity_id: remote.living_room
     service: remote.turn_on
   alias: Someone Comes Home
+  hide_entity: True
   condition: []
   id: '1507093785956'
   trigger:

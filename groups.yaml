@@ -5,6 +5,8 @@ livingroom_view:
   entities:
     - group.living_room
     - group.roomba
+    - light.room
+    - media_player.googlehome9280
 lights_view:
   name: Lights
   view: yes
@@ -37,6 +39,7 @@ lights:
     - switch.zwsix_kitchen_light
     - switch.zwthree_patio_light
     - light.bedroom_ceiling_fan
+    - light.room
 garage:
   name: Garage
   entities:

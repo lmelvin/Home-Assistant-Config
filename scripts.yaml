@@ -46,3 +46,4 @@ roomba_return_home:
   - data:
       entity_id: alarm_control_panel.arlo_base
     service: alarm_control_panel.alarm_arm_away
+  - service: rest_command.sleep_pc

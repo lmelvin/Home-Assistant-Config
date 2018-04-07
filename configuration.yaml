@@ -109,6 +109,10 @@ namecheapdns:
   domain: !secret namecheap_domain_1
   password: !secret namecheap_password_1
 
+rest_command:
+  sleep_pc:
+    url: !secret sleep_on_lan_url
+
 # INCLUDES
 alert: !include alerts.yaml
 automation: !include automations.yaml

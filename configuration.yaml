@@ -113,6 +113,15 @@ rest_command:
   sleep_pc:
     url: !secret sleep_on_lan_url
 
+scene:
+  - name: Movies
+    entities:
+      light.living_room:
+        state: on
+        brightness: 78
+        color_temp: 425
+      group.all_switches: off
+
 # INCLUDES
 alert: !include alerts.yaml
 automation: !include automations.yaml

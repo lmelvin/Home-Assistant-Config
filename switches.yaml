@@ -1,22 +1,22 @@
-- platform: template
-  switches:
-    living_room_tv:
-      friendly_name: Living Room TV
-      value_template: "{% if states.remote.living_room.attributes.current_activity == 'Watch TV' %}on{% else %}off{% endif %}"
-      turn_on:
-        service: remote.turn_on
-        entity_id: remote.living_room
-      turn_off:
-        service: remote.turn_off
-        entity_id: remote.living_room
-    living_room_chromecast:
-      friendly_name: Living Room Chromecast
-      value_template: "{% if states.remote.living_room.attributes.current_activity == 'Watch Chromecast' %}on{% else %}off{% endif %}"
-      turn_on:
-        service: remote.turn_on
-        entity_id: remote.living_room
-        data:
-          activity: 31895953
-      turn_off:
-        service: remote.turn_off
-        entity_id: remote.living_room
+#- platform: template
+#  switches:
+#    living_room_tv:
+#      friendly_name: Living Room TV
+#      value_template: "{% if states.remote.living_room.attributes.current_activity == 'Watch TV' %}on{% else %}off{% endif %}"
+#      turn_on:
+#        service: remote.turn_on
+#        entity_id: remote.living_room
+#      turn_off:
+#        service: remote.turn_off
+#        entity_id: remote.living_room
+#    living_room_chromecast:
+#      friendly_name: Living Room Chromecast
+#      value_template: "{% if states.remote.living_room.attributes.current_activity == 'Watch Chromecast' %}on{% else %}off{% endif %}"
+#      turn_on:
+#        service: remote.turn_on
+#        entity_id: remote.living_room
+#        data:
+#          activity: 31895953
+#      turn_off:
+#        service: remote.turn_off
+#        entity_id: remote.living_room

@@ -13,7 +13,7 @@
     - service: alarm_control_panel.alarm_disarm
       entity_id: alarm_control_panel.arlo_base
 
-#Turn patio camera on when door shuts
+# Turn patio camera on when door shuts
 - alias: 'Turn on camera when door closes'
   hide_entity: True
   trigger:
@@ -65,31 +65,21 @@
 - alias: 'Announce Door Open'
   hide_entity: True
   trigger:
-    platform: state
-    entity_id: 
-      - binary_sensor.zwtwo_front_door
-      - binary_sensor.zwone_patio_door
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: 
+        - binary_sensor.zwtwo_front_door
+        - binary_sensor.zwone_patio_door
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: cover.truck_garage_door
+      from: 'closed'
+      to: 'open'
   action:
     - service: tts.google_say
       entity_id: media_player.googlehome9280
       data_template:
         message: '{{ trigger.to_state.name }} opened'
-
-# Announce when garage door is open
-- alias: 'Announce Garage Door Is Open'
-  hide_entity: True
-  trigger:
-    platform: state
-    entity_id: cover.truck_garage_door
-    from: 'closed'
-    to: 'open'
-  action:
-    - service: tts.google_say
-      entity_id: media_player.googlehome9280
-      data:
-        message: Garage Door Is Open
 
 # Notify when a door opens when nobody is home
 - alias: 'Notify When Door Opens While Everyone is Away'

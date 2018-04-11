@@ -85,12 +85,15 @@
 - alias: 'Notify When Door Opens While Everyone is Away'
   hide_entity: True
   trigger:
-    platform: state
-    entity_id: 
-      - binary_sensor.zwtwo_front_door
-      - binary_sensor.zwone_patio_door
-    from: 'off'
-    to: 'on'
+    - platform: state
+      entity_id: 
+        - binary_sensor.zwtwo_front_door
+        - binary_sensor.zwone_patio_door
+      from: 'off'
+      to: 'on'
+    - platform: state
+      entity_id: cover.truck_garage_door
+      to: 'open'
   condition:
     condition: state
     entity_id: group.all_devices

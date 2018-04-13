@@ -1,3 +1,25 @@
+# Turn on patio lights at sunset
+- alias: 'Turn On Patio Lights At Sunset'
+  hide_entity: True
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:45:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.ge_patio_switch_switch
+
+# Turn off patio lights at sunrise
+- alias: 'Turn Off Patio Lights At Sunrise'
+  hide_entity: True
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "-01:00:00"
+  action:
+    service: switch.turn_off
+    entity_id: switch.ge_patio_switch_switch
+
 # Turn patio camera off when outside
 - alias: 'Turn off cameras when door is open'
   hide_entity: True

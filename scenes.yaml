@@ -1,0 +1,11 @@
+- name: Movies
+  entities:
+    light.bedroom_ceiling_fan: off
+    switch.zwfive_hall_light: off
+    switch.zwthree_patio_light: off
+    switch.zwfour_dining_light: off
+    switch.zwsix_kitchen_light: off
+    light.living_room:
+      state: on
+      brightness: 78
+      color_temp: 425

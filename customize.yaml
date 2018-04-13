@@ -9,7 +9,7 @@ sensor.dark_sky_temperature:
 sensor.dark_sky_precip_intensity:
   friendly_name: Precip Intensity
 media_player.bedroom:
-  friendly_name: Bedroom Chromecast
+  friendly_name: Bedroom Chromecastg
 sensor.living_room_thermostat_humidity:
   friendly_name: Living Room Humidity
   icon: mdi:water-percent
@@ -121,10 +121,6 @@ zwave.zwone:
   hidden: true
 zwave.zwsix:
   hidden: true
-zwave.ge_patio_switch:
-  hidden: true
-switch.ge_patio_switch_switch:
-  hidden: true
 zwave.zwtwo:
   hidden: true
 zwave.zwthree:
@@ -136,4 +132,6 @@ light.hue_ambiance_downlight_2:
 light.hue_ambiance_downlight_3:
   hidden: true
 light.hue_ambiance_downlight_1:
+  hidden: true
+zwave.ge_patio_switch:
   hidden: true

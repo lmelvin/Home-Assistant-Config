@@ -135,3 +135,5 @@ light.hue_ambiance_downlight_1:
   hidden: true
 zwave.ge_patio_switch:
   hidden: true
+fan.xiaomi_miio_device:
+  friendly_name: Xiaomi Air Purifier

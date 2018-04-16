@@ -118,3 +118,7 @@ light.hue_ambiance_downlight_4:
   name:
   platform: hue
   unique_id: 00:17:88:01:02:f3:58:5d-0b
+fan.xiaomi_miio_device:
+  name:
+  platform: xiaomi_miio
+  unique_id: zhimi.airpurifier.m1-34:CE:00:A3:DD:17

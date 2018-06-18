@@ -122,3 +122,35 @@ fan.xiaomi_miio_device:
   name:
   platform: xiaomi_miio
   unique_id: zhimi.airpurifier.m1-34:CE:00:A3:DD:17
+zwave.sigma_designs_uzb_zwave_usb_adapter:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.ge_patio_switch:
+  name:
+  platform: zwave
+  unique_id: node-2
+zwave.zwone:
+  name:
+  platform: zwave
+  unique_id: node-3
+zwave.zwtwo:
+  name:
+  platform: zwave
+  unique_id: node-4
+zwave.zwthree:
+  name:
+  platform: zwave
+  unique_id: node-5
+zwave.zwfour:
+  name:
+  platform: zwave
+  unique_id: node-6
+zwave.zwfive:
+  name:
+  platform: zwave
+  unique_id: node-7
+zwave.zwsix:
+  name:
+  platform: zwave
+  unique_id: node-8

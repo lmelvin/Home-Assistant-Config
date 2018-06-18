@@ -2,3 +2,7 @@
   name: Living Room
   host: !secret harmony_living_room_ip
   activity: Watch TV
+- platform: harmony
+  name: Bedroom TV
+  host: !secret harmony_bedroom_ip
+  activity: Watch TV

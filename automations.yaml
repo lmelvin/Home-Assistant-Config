@@ -8,6 +8,9 @@
   - data:
       entity_id: switch.zwfour_dining_light
     service: switch.turn_on
+  - data:
+      entity_id: light.living_room
+    service: light.turn_on
   - condition: state
     entity_id: remote.living_room
     state: 'off'
@@ -15,7 +18,7 @@
       activity: Watch TV
       entity_id: remote.living_room
     service: remote.turn_on
-  alias: Someone Comes Home
+  alias: 'Someone Comes Home'
   hide_entity: True
   condition: []
   id: '1507093785956'

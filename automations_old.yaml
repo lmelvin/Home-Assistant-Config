@@ -127,6 +127,7 @@
 
 # Run roomba every day at noon
 - alias: Run Roomba
+  initial_state: False
   trigger:
     - platform: time
       at: '12:00:00'

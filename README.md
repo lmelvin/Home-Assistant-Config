@@ -35,7 +35,7 @@ Home Assistant configuration. https://home-assistant.io/
 [Logitech - Harmony Smart Control](https://www.bestbuy.com/site/logitech-harmony-smart-control-black/8574049.p?skuId=8574049)
 
 #### Switches
-[GE Z-Wave Wireless Smart Lighting Control Outdoor](https://www.amazon.com/s/ref=nb_sb_ss_c_1_15?url=search-alias%3Daps&field-keywords=logitech+harmony&sprefix=logitech+harmon%2Caps%2C202&crid=31RWU3J0EI2MD)
+[GE Z-Wave Wireless Smart Lighting Control Outdoor](https://www.amazon.com/gp/product/B0013V8K3O)
 
 [Leviton DZ15S-1BZ Decora Smart Switch with Z-Wave Plus](https://www.amazon.com/Leviton-DZ15S-1BZ-Decora-Switch-Technology/dp/B01MZ0WVKH/ref=sr_1_4?ie=UTF8&qid=1538507433&sr=8-4&keywords=leviton+smart+switch)
 

@@ -137,3 +137,65 @@ zwave.ge_patio_switch:
   hidden: true
 fan.xiaomi_miio_device:
   friendly_name: Xiaomi Air Purifier
+light.lr_bl:
+  hidden: true
+light.lr_br:
+  hidden: true
+light.lr_fl:
+  hidden: true
+light.lr_fr:
+  hidden: true
+sensor.r7000_gateway_packetssec_sent:
+  hidden: true
+sensor.r7000_gateway_packetssec_received:
+  hidden: true
+sensor.r7000_gateway_packets_sent:
+  hidden: true
+sensor.r7000_gateway_packets_received:
+  hidden: true
+sensor.r7000_gateway_kbytesec_sent:
+  friendly_name: kbyte/sec sent
+sensor.r7000_gateway_kbytesec_received:
+  friendly_name: kbyte/sec received
+sensor.r7000_gateway_bytes_received:
+  hidden: true
+sensor.r7000_gateway_bytes_sent:
+  hidden: true
+zwave.ecolink_doorwindow_sensor_2:
+  hidden: true
+zwave.ecolink_doorwindow_sensor:
+  hidden: true
+zwave.ge_12720_outdoor_smart_switch:
+  hidden: true
+zwave.leviton_dz15s1bz_decora_smart_switch:
+  hidden: true
+zwave.leviton_dz15s1bz_decora_smart_switch_2:
+  hidden: true
+zwave.leviton_dz15s1bz_decora_smart_switch_3:
+  hidden: true
+zwave.leviton_dz15s1bz_decora_smart_switch_4:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_access_control:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_alarm_level:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_alarm_type:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_burglar:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_sourcenodeid:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_power_management:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_access_control_2:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_alarm_level_2:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_alarm_type_2:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_burglar_2:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_power_management_2:
+  hidden: true
+sensor.ecolink_doorwindow_sensor_sourcenodeid_2:
+  hidden: true

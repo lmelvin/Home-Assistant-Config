@@ -7,7 +7,7 @@
     offset: '-00:45:00'
   action:
     - service: switch.turn_on
-      entity_id: switch.ge_patio_switch_switch
+      entity_id: switch.plug_patio
 
 # Turn off patio lights at sunrise
 - alias: 'Turn Off Patio Lights At Sunrise'
@@ -15,21 +15,21 @@
   trigger:
     platform: sun
     event: sunrise
-    offset: "-01:00:00"
+    offset: "-02:00:00"
   action:
     service: switch.turn_off
-    entity_id: switch.ge_patio_switch_switch
+    entity_id: switch.plug_patio
 
 # Turn patio camera off when outside
 - alias: 'Turn off cameras when door is open'
   hide_entity: True
   trigger:
     platform: state
-    entity_id: binary_sensor.zwone_patio_door
+    entity_id: binary_sensor.ecolink_door_patio
     to: 'on'
   condition:
     condition: state
-    entity_id: device_tracker.galaxy_s9
+    entity_id: group.all_devices
     state: 'home'
   action:
     - service: alarm_control_panel.alarm_disarm
@@ -40,11 +40,11 @@
   hide_entity: True
   trigger:
     platform: state
-    entity_id: binary_sensor.zwone_patio_door
+    entity_id: binary_sensor.ecolink_door_patio
     to: 'off'
   condition:
     condition: state
-    entity_id: device_tracker.galaxy_s9
+    entity_id: group.all_devices
     state: 'home'
   action:
     - service: alarm_control_panel.alarm_arm_home
@@ -89,8 +89,8 @@
   trigger:
     - platform: state
       entity_id: 
-        - binary_sensor.zwtwo_front_door
-        - binary_sensor.zwone_patio_door
+        - binary_sensor.ecolink_door_front
+        - binary_sensor.ecolink_door_patio
       from: 'off'
       to: 'on'
     - platform: state
@@ -99,7 +99,7 @@
       to: 'open'
   action:
     - service: tts.google_say
-      entity_id: media_player.googlehome9280
+      entity_id: media_player.living_room_speaker
       data_template:
         message: '{{ trigger.to_state.name }} opened'
 
@@ -109,8 +109,8 @@
   trigger:
     - platform: state
       entity_id: 
-        - binary_sensor.zwtwo_front_door
-        - binary_sensor.zwone_patio_door
+        - binary_sensor.ecolink_door_front
+        - binary_sensor.ecolink_door_patio
       from: 'off'
       to: 'on'
     - platform: state

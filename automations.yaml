@@ -3,10 +3,10 @@
       entity_id: alarm_control_panel.arlo_base
     service: alarm_control_panel.alarm_arm_home
   - data:
-      entity_id: switch.zwfive_hall_light
+      entity_id: switch.light_hallway
     service: switch.turn_on
   - data:
-      entity_id: switch.zwfour_dining_light
+      entity_id: switch.light_dining
     service: switch.turn_on
   - data:
       entity_id: light.living_room

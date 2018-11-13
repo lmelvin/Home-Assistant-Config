@@ -1,10 +1,10 @@
 - name: Movies
   entities:
     light.bedroom_ceiling_fan: off
-    switch.zwfive_hall_light: off
-    switch.zwthree_patio_light: off
-    switch.zwfour_dining_light: off
-    switch.zwsix_kitchen_light: off
+    switch.light_hallway: off
+    switch.light_patio: off
+    switch.light_dining: off
+    switch.light_kitchen: off
     light.living_room:
       state: on
       brightness: 78

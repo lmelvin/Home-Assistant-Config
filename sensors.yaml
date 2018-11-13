@@ -2,9 +2,7 @@
   api_key: !secret darksky_api_key
   units: us
   monitored_conditions:
-    - precip_type
     - temperature
-    - nearest_storm_distance
     - humidity
 - platform: history_stats
   name: Roomba Runtime Today
@@ -52,7 +50,7 @@
             Unknown
           {% endif %}
           {% else %}
-          n/a
+            n/a
           {% endif %}'
     garage_car_present:
       friendly_name: 'Truck in Garage'
@@ -65,5 +63,5 @@
             No
           {% endif %}
           {% else %}
-          n/a
+            n/a
           {% endif %}'

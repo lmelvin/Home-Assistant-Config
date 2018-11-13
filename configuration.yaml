@@ -17,8 +17,9 @@ homeassistant:
       hidden: true
     "sensor.front_door_sensor*":
       hidden: true
+
 config:
-conversation:
+cloud:
 discovery:
   ignore:
     - samsung_tv
@@ -27,10 +28,6 @@ discovery:
 frontend:
 history:
 logbook:
-sun:
-updater:
-  include_used_components: true
-hassio:
 recorder:
   exclude:
     domains:
@@ -39,9 +36,18 @@ recorder:
       - updater
       - group
       - script
+    entities:
+      - sensor.ecolink_doorwindow_sensor_access_control
+      - sensor.ecolink_doorwindow_sensor_alarm_level
+      - sensor.ecolink_doorwindow_sensor_alarm_type
+      - sensor.ecolink_doorwindow_sensor_burglar
+      - sensor.ecolink_doorwindow_sensor_power_management
+      - sensor.ecolink_doorwindow_sensor_sourcenodeid
+sun:
+updater:
+  include_used_components: true
 
-http:  
-  api_password: !secret api_password
+http:
   server_port: !secret hass_port
   base_url: !secret base_url
   ssl_certificate: /ssl/fullchain.pem
@@ -49,44 +55,19 @@ http:
   ip_ban_enabled: true
   login_attempts_threshold: 5
 
-notify:
-  - platform: pushbullet
-    name: push
-    api_key: !secret pushbullet_key
-  - platform: lannouncer
-    name: lan
-    host: !secret lannouncer_ip
-
 tts:
-  platform: google
-  time_memory: 57600
+  - platform: google
 
 zwave:
   usb_path: /dev/ttyUSB0
-
-zha:
-  usb_path: /dev/ttyUSB1
-  database_path: /config/zigbee.db
-
-panel_iframe:
-  configurator:
-    title: Edit
-    icon: mdi:wrench
-    url: !secret configurator_url
 
 hue:
   bridges:
     - host: !secret hue_ip
 
-weblink:
-  entities:
-    - name: Arlo
-      url: 'https://arlo.netgear.com/#/cameras'
-      icon: mdi:cctv
-    - name: Ring
-      url: 'https://ring.com/account/activity'
-
-ffmpeg:
+rest_command:
+  sleep_pc:
+    url: !secret sleep_on_lan_url
 
 arlo:
   username: !secret arlo_un
@@ -95,39 +76,28 @@ arlo:
 alarm_control_panel:
   - platform: arlo
     home_mode_name: Home
-
-#camera:
-  #- platform: arlo
-  #- platform: ring
-
-ring:
-  username: !secret ring_un
-  password: !secret ring_pw
+    scan_interval: 90
 
 namecheapdns:
   host: !secret namecheap_host_1
   domain: !secret namecheap_domain_1
   password: !secret namecheap_password_1
 
-rest_command:
-  sleep_pc:
-    url: !secret sleep_on_lan_url
+# ===================== INCLUDES =====================
 
-# INCLUDES
 alert: !include alerts.yaml
 automation: !include automations.yaml
 automation old: !include automations_old.yaml
 binary_sensor: !include binary_sensors.yaml
 cover: !include covers.yaml
-cloud: !include cloud.yaml
 device_tracker: !include device_trackers.yaml
 fan: !include fans.yaml
 group: !include groups.yaml
-#nest: !include nest.yaml
+notify: !include notify.yaml
 remote: !include remotes.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml
-switch: !include switches.yaml
+weblink: !include weblinks.yaml
 vacuum: !include vacuums.yaml
 zone: !include_dir_list zones/

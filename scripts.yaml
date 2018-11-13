@@ -14,20 +14,11 @@ roomba_return_home:
       entity_id: remote.living_room
     service: remote.turn_on
   - data:
-      entity_id: switch.zwsix_kitchen_light
+      entity_id: switch.light_kitchen
     service: switch.turn_on
   - data:
-      entity_id: switch.zwfour_dining_light
+      entity_id: switch.light_dining
     service: switch.turn_on
-  - data:
-      command:
-      - 2
-      - 0
-      - 2
-      delay_secs: 0.5
-      device: 52276278
-      entity_id: remote.living_room
-    service: remote.send_command
 '1518258307834':
   alias: Night
   sequence:

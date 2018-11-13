@@ -1,60 +1,36 @@
-sensor.ecolink_unknown_type0004_id0002_access_control:
+sensor.ecolink_doorwindow_sensor_access_control_2:
   ignored: true
   polling_intensity: 0
-sensor.ecolink_unknown_type0004_id0002_alarm_level:
+sensor.ecolink_doorwindow_sensor_alarm_level_2:
   ignored: true
   polling_intensity: 0
-sensor.ecolink_unknown_type0004_id0002_alarm_type:
+sensor.ecolink_doorwindow_sensor_alarm_type_2:
   ignored: true
   polling_intensity: 0
-sensor.ecolink_unknown_type0004_id0002_burglar:
+sensor.ecolink_doorwindow_sensor_burglar_2:
   ignored: true
   polling_intensity: 0
-sensor.ecolink_unknown_type0004_id0002_power_management:
+sensor.ecolink_doorwindow_sensor_sourcenodeid_2:
   ignored: true
   polling_intensity: 0
-binary_sensor.ecolink_unknown_type0004_id0002_patio_door:
-  ignored: false
-  polling_intensity: 0
-sensor.zwone_access_control:
+sensor.ecolink_doorwindow_sensor_access_control:
   ignored: true
   polling_intensity: 0
-sensor.zwone_alarm_level:
+sensor.ecolink_doorwindow_sensor_alarm_level:
   ignored: true
   polling_intensity: 0
-sensor.zwone_alarm_type:
+sensor.ecolink_doorwindow_sensor_alarm_type:
   ignored: true
   polling_intensity: 0
-sensor.zwone_burglar:
+sensor.ecolink_doorwindow_sensor_burglar:
   ignored: true
   polling_intensity: 0
-sensor.zwone_power_management:
+sensor.ecolink_doorwindow_sensor_power_management:
   ignored: true
   polling_intensity: 0
-sensor.zwone_sourcenodeid:
+sensor.ecolink_doorwindow_sensor_sourcenodeid:
   ignored: true
   polling_intensity: 0
-sensor.ecolink_unknown_type0004_id0002_sourcenodeid:
-  ignored: true
-  polling_intensity: 0
-sensor.zwtwo_access_control:
-  ignored: true
-  polling_intensity: 0
-sensor.zwtwo_alarm_level:
-  ignored: true
-  polling_intensity: 0
-sensor.zwtwo_alarm_type:
-  ignored: true
-  polling_intensity: 0
-sensor.zwtwo_burglar:
-  ignored: true
-  polling_intensity: 0
-sensor.zwtwo_power_management:
-  ignored: true
-  polling_intensity: 0
-sensor.zwtwo_sourcenodeid:
-  ignored: true
-  polling_intensity: 0
-binary_sensor.zwone_patio_door:
+sensor.ecolink_doorwindow_sensor_power_management_2:
   ignored: true
   polling_intensity: 0

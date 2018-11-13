@@ -34,10 +34,10 @@ roomba:
 lights:
   name: Lights
   entities: 
-    - switch.zwfour_dining_light
-    - switch.zwfive_hall_light
-    - switch.zwsix_kitchen_light
-    - switch.zwthree_patio_light
+    - switch.light_dining
+    - switch.light_hallway
+    - switch.light_kitchen
+    - switch.light_patio
     - light.bedroom_ceiling_fan
     - light.living_room
 garage:
@@ -46,3 +46,8 @@ garage:
     - cover.truck_garage_door
     - sensor.truck_garage_status
     - sensor.garage_car_present
+router:
+  name: Router
+  entities:
+    - sensor.r7000_gateway_kbytesec_received
+    - sensor.r7000_gateway_kbytesec_sent

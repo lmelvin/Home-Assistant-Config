@@ -4,7 +4,7 @@ Home Assistant configuration. https://home-assistant.io/
 ## Hardware
 
 #### Host
-[CanaKit Raspberry Pi 3](https://www.amazon.com/gp/product/B01C6Q2GSY/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
+[Raspberry Pi 3 B+](https://www.adafruit.com/product/3775)
 
 #### Z-Wave/Zigbee Adapter
 [Linear HUSBZB-1](https://www.amazon.com/gp/product/B01GJ826F8/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1)

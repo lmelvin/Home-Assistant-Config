@@ -76,7 +76,7 @@ arlo:
 alarm_control_panel:
   - platform: arlo
     home_mode_name: Home
-    scan_interval: 90
+    scan_interval: 120
 
 namecheapdns:
   host: !secret namecheap_host_1

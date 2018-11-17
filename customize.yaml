@@ -199,3 +199,7 @@ sensor.ecolink_doorwindow_sensor_power_management_2:
   hidden: true
 sensor.ecolink_doorwindow_sensor_sourcenodeid_2:
   hidden: true
+script.living_room_remote_volume_down:
+  icon: mdi:volume-minus
+script.living_room_remote_volume_up:
+  icon: mdi:volume-plus

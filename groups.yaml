@@ -24,6 +24,8 @@ living_room:
   name: Living Room
   entities:
     - remote.living_room
+    - script.living_room_remote_volume_up
+    - script.living_room_remote_volume_down
     - media_player.living_room
     - sensor.living_room_tv_on_today
 roomba:

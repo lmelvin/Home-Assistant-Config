@@ -1,5 +1,5 @@
 # Home-Assistant-Config
-Home Assistant configuration. https://home-assistant.io/
+Home Assistant configuration for Hass.io. https://www.home-assistant.io/hassio/
 
 ## Hardware
 

@@ -20,36 +20,6 @@
     service: switch.turn_off
     entity_id: switch.plug_patio
 
-# Turn patio camera off when outside
-- alias: 'Turn off cameras when door is open'
-  hide_entity: True
-  trigger:
-    platform: state
-    entity_id: binary_sensor.ecolink_door_patio
-    to: 'on'
-  condition:
-    condition: state
-    entity_id: group.all_devices
-    state: 'home'
-  action:
-    - service: alarm_control_panel.alarm_disarm
-      entity_id: alarm_control_panel.arlo_base
-
-# Turn patio camera on when door shuts
-- alias: 'Turn on camera when door closes'
-  hide_entity: True
-  trigger:
-    platform: state
-    entity_id: binary_sensor.ecolink_door_patio
-    to: 'off'
-  condition:
-    condition: state
-    entity_id: group.all_devices
-    state: 'home'
-  action:
-    - service: alarm_control_panel.alarm_arm_home
-      entity_id: alarm_control_panel.arlo_base
-
 # Everyone leaves
 - alias: 'Everyone Is Away'
   hide_entity: True
@@ -102,6 +72,36 @@
       entity_id: media_player.living_room_speaker
       data_template:
         message: '{{ trigger.to_state.name }} opened'
+
+# Turn patio camera off when patio door opens
+- alias: 'Turn off cameras when patio door is open'
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ecolink_door_patio
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: 'home'
+  action:
+    - service: alarm_control_panel.alarm_disarm
+      entity_id: alarm_control_panel.arlo_base
+
+# Turn patio camera on when door shuts
+- alias: 'Turn on camera when door closes'
+  hide_entity: False
+  trigger:
+    platform: state
+    entity_id: binary_sensor.ecolink_door_patio
+    to: 'off'
+  condition:
+    condition: state
+    entity_id: group.all_devices
+    state: 'home'
+  action:
+    - service: alarm_control_panel.alarm_arm_home
+      entity_id: alarm_control_panel.arlo_base
 
 # Notify when a door opens when nobody is home
 - alias: 'Notify When Door Opens While Everyone is Away'

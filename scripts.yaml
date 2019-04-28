@@ -41,7 +41,7 @@ roomba_return_home:
   alias: Night
   sequence:
   - data:
-      entity_id: group.all_remotes
+      entity_id: remote.living_room
     service: remote.turn_off
   - data:
       entity_id: group.lights
@@ -54,5 +54,5 @@ roomba_return_home:
     service: cover.close_cover
   - data:
       entity_id: alarm_control_panel.arlo_base
-    service: alarm_control_panel.alarm_arm_away
+    service: alarm_control_panel.alarm_arm_home
   - service: rest_command.sleep_pc

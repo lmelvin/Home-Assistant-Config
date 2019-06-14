@@ -85,6 +85,13 @@ namecheapdns:
   domain: !secret namecheap_domain_1
   password: !secret namecheap_password_1
 
+lovelace:
+#  mode: yaml
+
+weather:
+  - platform: darksky
+    api_key: !secret darksky_api_key
+
 # ===================== INCLUDES =====================
 
 alert: !include alerts.yaml

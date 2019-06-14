@@ -53,3 +53,8 @@ router:
   entities:
     - sensor.r7000_gateway_kbytesec_received
     - sensor.r7000_gateway_kbytesec_sent
+alerts:
+ name: Alerts
+ entities:
+   - alert.patio_door
+   - alert.garage_door

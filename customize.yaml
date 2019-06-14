@@ -203,3 +203,5 @@ script.living_room_remote_volume_down:
   icon: mdi:volume-minus
 script.living_room_remote_volume_up:
   icon: mdi:volume-plus
+sun.sun:
+  hidden: true

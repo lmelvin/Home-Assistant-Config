@@ -23,7 +23,7 @@
     xiaomi_temp:
       friendly_name: Living Room Temp
       unit_of_measurement: '°F'
-      value_template: "{{ states.fan.xiaomi_miio_device.attributes.temperature * 9/5 + 32 }}"
+      value_template: "{{ states.fan.xiaomi_miio_device.attributes.temperature * 9/5 + 32|round(2) }}"
     xiaomi_air_quality:
       friendly_name: Air Quality
       unit_of_measurement: 'PM2.5'

@@ -2,8 +2,5 @@ client_id: !secret nest_client_id
 client_secret: !secret nest_client_secret
 sensors:
   monitored_conditions:
-    - co_status
-    - smoke_status
-    - battery_health
-binary_sensors:
-  monitored_conditions:
+     - 'temperature'
+     - 'target'

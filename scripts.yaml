@@ -4,8 +4,8 @@ living_room_remote_volume_down:
   - service: remote.send_command
     data:
       entity_id: remote.living_room
-      num_repeats: 2
-      device: "52276296"
+      num_repeats: 3
+      device: "64551664"
       command: "VolumeDown"
 living_room_remote_volume_up:
   alias: "TV Volume Up"
@@ -13,8 +13,8 @@ living_room_remote_volume_up:
   - service: remote.send_command
     data:
       entity_id: remote.living_room
-      num_repeats: 2
-      device: "52276296"
+      num_repeats: 3
+      device: "64551664"
       command: "VolumeUp"
 roomba_return_home:
   alias: Roomba Return Home

@@ -34,3 +34,12 @@ sensor.ecolink_doorwindow_sensor_sourcenodeid:
 sensor.ecolink_doorwindow_sensor_power_management_2:
   ignored: true
   polling_intensity: 0
+switch.light_kitchen:
+  ignored: true
+  polling_intensity: 0
+switch.light_hallway:
+  ignored: true
+  polling_intensity: 0
+switch.light_dining:
+  ignored: true
+  polling_intensity: 0

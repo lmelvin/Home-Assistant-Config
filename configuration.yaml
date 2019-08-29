@@ -54,7 +54,7 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   ip_ban_enabled: true
-  login_attempts_threshold: 5
+  login_attempts_threshold: 10
 
 tts:
   - platform: google_translate
@@ -66,10 +66,6 @@ zwave:
 hue:
   bridges:
     - host: !secret hue_ip
-
-rest_command:
-  sleep_pc:
-    url: !secret sleep_on_lan_url
 
 arlo:
   username: !secret arlo_un
@@ -86,7 +82,6 @@ namecheapdns:
   password: !secret namecheap_password_1
 
 lovelace:
-#  mode: yaml
 
 weather:
   - platform: darksky
@@ -98,10 +93,10 @@ alert: !include alerts.yaml
 automation: !include automations.yaml
 automation old: !include automations_old.yaml
 binary_sensor: !include binary_sensors.yaml
-cover: !include covers.yaml
 device_tracker: !include device_trackers.yaml
 fan: !include fans.yaml
 group: !include groups.yaml
+nest: !include nest.yaml
 notify: !include notify.yaml
 remote: !include remotes.yaml
 scene: !include scenes.yaml

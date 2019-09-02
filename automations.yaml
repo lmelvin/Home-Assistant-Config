@@ -1,15 +1,14 @@
-- action:
+- id: '1507093785956'
+  alias: Someone Comes Home
+  trigger:
+  - entity_id: device_tracker.luke_s9
+    from: not_home
+    platform: state
+    to: home
+  condition: []
+  action:
   - data:
-      entity_id: alarm_control_panel.arlo_base
-    service: alarm_control_panel.alarm_arm_home
-  - data:
-      entity_id: switch.light_hallway
-    service: switch.turn_on
-  - data:
-      entity_id: switch.light_dining
-    service: switch.turn_on
-  - data:
-      entity_id: light.living_room
+      entity_id: light.kitchen_bar
     service: light.turn_on
   - condition: state
     entity_id: remote.living_room
@@ -18,12 +17,34 @@
       activity: Watch TV
       entity_id: remote.living_room
     service: remote.turn_on
-  alias: 'Someone Comes Home'
+# Everyone leaves
+- id: '1507093785957'
+  alias: Everyone Is Away
   hide_entity: True
-  condition: []
-  id: '1507093785956'
   trigger:
-  - entity_id: group.all_devices
-    from: not_home
     platform: state
-    to: home
+    entity_id: group.all_devices
+    from: home
+    to: not_home
+    for:
+      hours: 0
+      minutes: 4
+      seconds: 0
+  condition: []
+  action:
+    - service: remote.turn_off
+      entity_id: group.all_remotes
+    - service: light.turn_off
+      entity_id: group.lights
+# Notify when HASS starts up
+- id: '1507093785958'
+  alias: Home Assistant Startup
+  hide_entity: True
+  trigger:
+    platform: homeassistant
+    event: start
+  condition: []
+  action:
+    service: notify.push
+    data:
+      message: Home Assistant started.

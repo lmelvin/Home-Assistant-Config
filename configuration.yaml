@@ -44,7 +44,9 @@ recorder:
       - sensor.ecolink_doorwindow_sensor_burglar
       - sensor.ecolink_doorwindow_sensor_power_management
       - sensor.ecolink_doorwindow_sensor_sourcenodeid
+
 sun:
+
 updater:
   include_used_components: true
 
@@ -89,13 +91,12 @@ weather:
 
 # ===================== INCLUDES =====================
 
-alert: !include alerts.yaml
+#alert: !include alerts.yaml
 automation: !include automations.yaml
-automation old: !include automations_old.yaml
 binary_sensor: !include binary_sensors.yaml
-device_tracker: !include device_trackers.yaml
+#device_tracker: !include device_trackers.yaml
 fan: !include fans.yaml
-group: !include groups.yaml
+#group: !include groups.yaml
 nest: !include nest.yaml
 notify: !include notify.yaml
 remote: !include remotes.yaml

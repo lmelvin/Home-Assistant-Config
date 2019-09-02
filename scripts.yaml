@@ -5,7 +5,7 @@ living_room_remote_volume_down:
     data:
       entity_id: remote.living_room
       num_repeats: 3
-      device: "64551664"
+      device: "64778089"
       command: "VolumeDown"
 living_room_remote_volume_up:
   alias: "TV Volume Up"
@@ -14,7 +14,7 @@ living_room_remote_volume_up:
     data:
       entity_id: remote.living_room
       num_repeats: 3
-      device: "64551664"
+      device: "64778089"
       command: "VolumeUp"
 roomba_return_home:
   alias: Roomba Return Home
@@ -26,33 +26,17 @@ roomba_return_home:
   alias: Morning
   sequence:
   - data:
-      entity_id: alarm_control_panel.arlo_base
-    service: alarm_control_panel.alarm_disarm
+      entity_id: light.kitchen_bar
+    service: light.turn_on
   - data:
       entity_id: remote.living_room
     service: remote.turn_on
-  - data:
-      entity_id: switch.light_kitchen
-    service: switch.turn_on
-  - data:
-      entity_id: switch.light_dining
-    service: switch.turn_on
 '1518258307834':
   alias: Night
   sequence:
   - data:
-      entity_id: remote.living_room
-    service: remote.turn_off
-  - data:
-      entity_id: group.lights
-    service: switch.turn_off
-  - data:
-      entity_id: group.lights
+      entity_id: light.kitchen_bar
     service: light.turn_off
   - data:
-      entity_id: group.all_covers
-    service: cover.close_cover
-  - data:
-      entity_id: alarm_control_panel.arlo_base
-    service: alarm_control_panel.alarm_arm_home
-  - service: rest_command.sleep_pc
+      entity_id: remote.living_room
+    service: remote.turn_off

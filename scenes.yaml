@@ -1,11 +1,6 @@
 - name: Movies
   entities:
-    light.bedroom_ceiling_fan: off
-    switch.light_hallway: off
-    switch.light_patio: off
-    switch.light_dining: off
-    switch.light_kitchen: off
-    light.living_room:
+    light.kitchen_bar:
       state: on
       brightness: 78
       color_temp: 425

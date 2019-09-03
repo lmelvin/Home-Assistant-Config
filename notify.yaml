@@ -1,6 +1,3 @@
 - platform: pushbullet
   name: push
   api_key: !secret pushbullet_key
-#- platform: lannouncer
-#  name: lan
-#  host: !secret lannouncer_ip

@@ -17,29 +17,27 @@
       activity: Watch TV
       entity_id: remote.living_room
     service: remote.turn_on
-# Everyone leaves
 - id: '1507093785957'
   alias: Everyone Is Away
-  hide_entity: True
   trigger:
-    platform: state
-    entity_id: group.all_devices
-    from: home
-    to: not_home
+  - entity_id: device_tracker.luke_s9
     for:
       hours: 0
       minutes: 4
       seconds: 0
+    from: home
+    platform: state
+    to: not_home
   condition: []
   action:
-    - service: remote.turn_off
-      entity_id: group.all_remotes
-    - service: light.turn_off
-      entity_id: group.lights
-# Notify when HASS starts up
+  - entity_id: group.all_remotes
+    service: remote.turn_off
+  - entity_id: group.lights
+    service: light.turn_off
+  hide_entity: true
 - id: '1507093785958'
   alias: Home Assistant Startup
-  hide_entity: True
+  hide_entity: true
   trigger:
     platform: homeassistant
     event: start

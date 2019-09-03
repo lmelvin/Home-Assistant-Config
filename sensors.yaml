@@ -1,3 +1,10 @@
+- platform: version
+  name: version_available
+  source: hassio
+  image: raspberrypi3
+- platform: version
+  name: version_current
+  source: local
 - platform: darksky
   api_key: !secret darksky_api_key
   units: us

@@ -8,8 +8,6 @@ sensor.dark_sky_temperature:
   friendly_name: Outside Temp
 sensor.dark_sky_precip_intensity:
   friendly_name: Precip Intensity
-media_player.bedroom:
-  friendly_name: Bedroom Chromecastg
 sensor.living_room_thermostat_humidity:
   friendly_name: Living Room Humidity
   icon: mdi:water-percent
@@ -19,189 +17,19 @@ sensor.living_room_thermostat_target:
 sensor.living_room_thermostat_temperature:
   friendly_name: Living Room Temp
   hidden: true
-binary_sensor.patio_sensor_patio:
-  friendly_name: Patio Door
 binary_sensor.front_door_sensor_sensor:
   friendly_name: Front Door
 climate.living_room:
   friendly_name: Living Room Thermostat
-device_tracker.sle002s_iphone:
-  hidden: true
-binary_sensor.roomba_bin_full:
-  hidden: true
-sensor.roomba_battery:
-  hidden: true
-sensor.roomba_status:
-  hidden: true
-zwave.sigma_designs_uzb_zwave_usb_adapter:
-  hidden: true
-zwave.front_door_sensor:
-  hidden: true
-zwave.patio_sensor:
-  hidden: true
 media_player.living_room:
   friendly_name: Living Room Chromecast
-light.hue_white_lamp_1:
-  hidden: true
-light.hue_white_lamp_4:
-  hidden: true
-light.office_lamp:
-  hidden: true
-binary_sensor.zwone_patio_door:
-  friendly_name: Patio Door
-binary_sensor.zwtwo_front_door:
-  friendly_name: Front Door
 remote.living_room:
   friendly_name: Living Room TV
-sensor.zwtwo_access_control:
-  hidden: true
-sensor.zwtwo_alarm_level:
-  hidden: true
-sensor.zwtwo_alarm_type:
-  hidden: true
-sensor.zwtwo_burglar:
-  hidden: true
-sensor.zwtwo_power_management:
-  hidden: true
-sensor.zwtwo_sourcenodeid:
-  hidden: true
-sensor.zwone_access_control:
-  hidden: true
-sensor.zwone_alarm_level:
-  hidden: true
-sensor.zwone_alarm_type:
-  hidden: true
-sensor.zwone_burglar:
-  hidden: true
-sensor.zwone_power_management:
-  hidden: true
-sensor.zwone_sourcenodeid:
-  hidden: true
-switch.zwthree_patio_light:
-  friendly_name: Patio Light
-switch.zwfour_dining_light:
-  friendly_name: Dining Light
-camera.4xh57872a5b56:
-  friendly_name: Living Room Camera
-camera.lr_1:
-  friendly_name: Porch Camera
-switch.zwfive_hall_light:
-  friendly_name: Hall Light
-switch.zwsix_kitchen_light:
-  friendly_name: Kitchen Light
-light.bedroom_1:
-  hidden: true
-light.bedroom_2:
-  hidden: true
-light.bedroom_3:
-  hidden: true
-light.accent_light:
-  hidden: true
-light.bedroom_lamp:
-  hidden: true
-switch.living_room_tv:
-  hidden: true
-switch.living_room_chromecast:
-  hidden: true
-binary_sensor.ring_driveway_motion:
-  hidden: true
-binary_sensor.ring_front_door_motion:
-  hidden: true
-sensor.garage_car_present:
-  icon: mdi:car
 media_player.googlehome9280:
   friendly_name: Google Home
-device_tracker.galaxy_s9_2:
-  friendly_name: Mom
-zwave.zwfive:
-  hidden: true
-zwave.zwfour:
-  hidden: true
-zwave.zwone:
-  hidden: true
-zwave.zwsix:
-  hidden: true
-zwave.zwtwo:
-  hidden: true
-zwave.zwthree:
-  hidden: true
-light.hue_ambiance_downlight_4:
-  hidden: true
-light.hue_ambiance_downlight_2:
-  hidden: true
-light.hue_ambiance_downlight_3:
-  hidden: true
-light.hue_ambiance_downlight_1:
-  hidden: true
-zwave.ge_patio_switch:
-  hidden: true
 fan.xiaomi_miio_device:
   friendly_name: Xiaomi Air Purifier
-light.lr_bl:
-  hidden: true
-light.lr_br:
-  hidden: true
-light.lr_fl:
-  hidden: true
-light.lr_fr:
-  hidden: true
-sensor.r7000_gateway_packetssec_sent:
-  hidden: true
-sensor.r7000_gateway_packetssec_received:
-  hidden: true
-sensor.r7000_gateway_packets_sent:
-  hidden: true
-sensor.r7000_gateway_packets_received:
-  hidden: true
-sensor.r7000_gateway_kbytesec_sent:
-  friendly_name: kbyte/sec sent
-sensor.r7000_gateway_kbytesec_received:
-  friendly_name: kbyte/sec received
-sensor.r7000_gateway_bytes_received:
-  hidden: true
-sensor.r7000_gateway_bytes_sent:
-  hidden: true
-zwave.ecolink_doorwindow_sensor_2:
-  hidden: true
-zwave.ecolink_doorwindow_sensor:
-  hidden: true
-zwave.ge_12720_outdoor_smart_switch:
-  hidden: true
-zwave.leviton_dz15s1bz_decora_smart_switch:
-  hidden: true
-zwave.leviton_dz15s1bz_decora_smart_switch_2:
-  hidden: true
-zwave.leviton_dz15s1bz_decora_smart_switch_3:
-  hidden: true
-zwave.leviton_dz15s1bz_decora_smart_switch_4:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_access_control:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_alarm_level:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_alarm_type:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_burglar:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_sourcenodeid:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_power_management:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_access_control_2:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_alarm_level_2:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_alarm_type_2:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_burglar_2:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_power_management_2:
-  hidden: true
-sensor.ecolink_doorwindow_sensor_sourcenodeid_2:
-  hidden: true
 script.living_room_remote_volume_down:
   icon: mdi:volume-minus
 script.living_room_remote_volume_up:
   icon: mdi:volume-plus
-sun.sun:
-  hidden: true

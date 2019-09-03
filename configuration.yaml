@@ -7,8 +7,6 @@ homeassistant:
   time_zone: America/Chicago
   customize: !include customize.yaml
   customize_glob:
-    "binary_sensor.*":
-      device_class: opening
     "media_player.*":
       icon: mdi:filmstrip
     "remote.*":
@@ -46,9 +44,6 @@ recorder:
       - sensor.ecolink_doorwindow_sensor_sourcenodeid
 
 sun:
-
-updater:
-  include_used_components: true
 
 http:
   server_port: !secret hass_port
@@ -90,13 +85,10 @@ weather:
     api_key: !secret darksky_api_key
 
 # ===================== INCLUDES =====================
-
-#alert: !include alerts.yaml
 automation: !include automations.yaml
 binary_sensor: !include binary_sensors.yaml
 #device_tracker: !include device_trackers.yaml
 fan: !include fans.yaml
-#group: !include groups.yaml
 nest: !include nest.yaml
 notify: !include notify.yaml
 remote: !include remotes.yaml

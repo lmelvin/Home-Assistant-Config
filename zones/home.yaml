@@ -1,5 +1,5 @@
 name: Home
 latitude: !secret zone_home_latitude
 longitude: !secret zone_home_longitude
-radius: 75
+radius: 60
 icon: mdi:home-outline

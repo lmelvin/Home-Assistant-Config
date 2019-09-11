@@ -1,15 +1,19 @@
 - id: '1507093785956'
   alias: Someone Comes Home
   trigger:
-  - entity_id: device_tracker.luke_s9
+  - entity_id: device_tracker.luke_gs9
     from: not_home
     platform: state
     to: home
   condition: []
   action:
   - data:
+      brightness: 255
       entity_id: light.kitchen_bar
     service: light.turn_on
+  - data:
+      entity_id: alarm_control_panel.arlo_base
+    service: alarm_control_panel.alarm_disarm
   - condition: state
     entity_id: remote.living_room
     state: 'off'
@@ -17,23 +21,31 @@
       activity: Watch TV
       entity_id: remote.living_room
     service: remote.turn_on
+  - data:
+      away_mode: home
+    service: nest.set_away_mode
 - id: '1507093785957'
   alias: Everyone Is Away
   trigger:
-  - entity_id: device_tracker.luke_s9
-    for:
-      hours: 0
-      minutes: 4
-      seconds: 0
+  - entity_id: device_tracker.luke_gs9
+    for: 0:04:00
     from: home
     platform: state
     to: not_home
   condition: []
   action:
-  - entity_id: group.all_remotes
-    service: remote.turn_off
-  - entity_id: group.lights
+  - data:
+      entity_id: light.kitchen_bar
     service: light.turn_off
+  - data:
+      entity_id: remote.living_room
+    service: remote.turn_off
+  - data:
+      entity_id: alarm_control_panel.arlo_base
+    service: alarm_control_panel.alarm_arm_away
+  - data:
+      away_mode: away
+    service: nest.set_away_mode
   hide_entity: true
 - id: '1507093785958'
   alias: Home Assistant Startup

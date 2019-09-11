@@ -1,21 +1,21 @@
 living_room_remote_volume_down:
-  alias: "TV Volume Down"
+  alias: TV Volume Down
   sequence:
   - service: remote.send_command
     data:
       entity_id: remote.living_room
       num_repeats: 3
-      device: "64778089"
-      command: "VolumeDown"
+      device: '64778089'
+      command: VolumeDown
 living_room_remote_volume_up:
-  alias: "TV Volume Up"
+  alias: TV Volume Up
   sequence:
   - service: remote.send_command
     data:
       entity_id: remote.living_room
       num_repeats: 3
-      device: "64778089"
-      command: "VolumeUp"
+      device: '64778089'
+      command: VolumeUp
 roomba_return_home:
   alias: Roomba Return Home
   sequence:
@@ -26,6 +26,7 @@ roomba_return_home:
   alias: Morning
   sequence:
   - data:
+      brightness: 255
       entity_id: light.kitchen_bar
     service: light.turn_on
   - data:
@@ -40,3 +41,11 @@ roomba_return_home:
   - data:
       entity_id: remote.living_room
     service: remote.turn_off
+'1567494595247':
+  alias: TV Mute
+  sequence:
+  - data:
+      command: Mute
+      device: 64778089
+      entity_id: remote.living_room
+    service: remote.send_command

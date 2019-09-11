@@ -33,3 +33,5 @@ script.living_room_remote_volume_down:
   icon: mdi:volume-minus
 script.living_room_remote_volume_up:
   icon: mdi:volume-plus
+script.1567494595247:
+  icon: mdi:volume-off

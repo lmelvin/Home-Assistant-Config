@@ -57,9 +57,6 @@ tts:
   - platform: google_translate
     service_name: google_say
 
-zwave:
-  usb_path: /dev/ttyUSB0
-
 hue:
   bridges:
     - host: !secret hue_ip
@@ -87,7 +84,7 @@ weather:
 # ===================== INCLUDES =====================
 automation: !include automations.yaml
 binary_sensor: !include binary_sensors.yaml
-#device_tracker: !include device_trackers.yaml
+device_tracker: !include device_trackers.yaml
 fan: !include fans.yaml
 nest: !include nest.yaml
 notify: !include notify.yaml

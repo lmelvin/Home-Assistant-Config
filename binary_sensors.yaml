@@ -2,7 +2,7 @@
   sensors:
     roomba_bin_full:
       friendly_name: Roomba Bin Full
-      value_template: "{{ states.vacuum.roomba.attributes.bin_full }}"
+      value_template: "{{ states.vacuum.t2.attributes.bin_full }}"
     hassio_update:
       friendly_name: hassio update
       value_template: "{{ states('sensor.version_available') != states('sensor.version_current') }}"

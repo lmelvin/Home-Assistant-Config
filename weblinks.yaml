@@ -1,9 +1,0 @@
-entities:
-  - name: Arlo
-    url: 'https://arlo.netgear.com/#/cameras'
-    icon: mdi:cctv
-  - name: Ring
-    url: 'https://ring.com/account/activity'
-  - name: Configurator
-    url: !secret configurator_url
-    icon: mdi:wrench

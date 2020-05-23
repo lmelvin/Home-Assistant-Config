@@ -12,7 +12,7 @@
       entity_id: light.kitchen_bar
     service: light.turn_on
   - data:
-      entity_id: alarm_control_panel.arlo_base
+      entity_id: alarm_control_panel.aarlo_arlo_base
     service: alarm_control_panel.alarm_disarm
   - condition: state
     entity_id: remote.living_room
@@ -41,15 +41,13 @@
       entity_id: remote.living_room
     service: remote.turn_off
   - data:
-      entity_id: alarm_control_panel.arlo_base
+      entity_id: alarm_control_panel.aarlo_arlo_base
     service: alarm_control_panel.alarm_arm_away
   - data:
       away_mode: away
     service: nest.set_away_mode
-  hide_entity: true
 - id: '1507093785958'
   alias: Home Assistant Startup
-  hide_entity: true
   trigger:
     platform: homeassistant
     event: start

@@ -13,8 +13,8 @@
     - humidity
 - platform: history_stats
   name: Roomba Runtime Today
-  entity_id: vacuum.roomba
-  state: 'on'
+  entity_id: vacuum.t2
+  state: 'cleaning'
   type: time
   start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
   end: '{{ now() }}'
@@ -38,7 +38,7 @@
     roomba_battery:
       friendly_name: Roomba Battery
       unit_of_measurement: "%"
-      value_template: "{{ states.vacuum.roomba.attributes.battery_level }}"
+      value_template: "{{ states.vacuum.t2.attributes.battery_level }}"
     roomba_status:
       friendly_name: Roomba Status
-      value_template: "{{ states.vacuum.roomba.attributes.status }}"
+      value_template: "{{ states.vacuum.t2.attributes.status }}"

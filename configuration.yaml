@@ -1,5 +1,6 @@
 homeassistant:
   name: Home
+  external_url: !secret base_url
   latitude: !secret zone_home_latitude
   longitude: !secret zone_home_longitude
   elevation: 213
@@ -21,8 +22,6 @@ system_health:
 cloud:
 discovery:
   ignore:
-    - samsung_tv
-    - directv
     - harmony
 frontend:
 history:
@@ -47,7 +46,6 @@ sun:
 
 http:
   server_port: !secret hass_port
-  base_url: !secret base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   ip_ban_enabled: true
@@ -61,14 +59,17 @@ hue:
   bridges:
     - host: !secret hue_ip
 
-arlo:
+aarlo:
   username: !secret arlo_un
   password: !secret arlo_pw
 
 alarm_control_panel:
-  - platform: arlo
+  - platform: aarlo
     home_mode_name: Home
-    scan_interval: 120
+    alarm_volume: 5
+
+camera:
+  - platform: aarlo
 
 namecheapdns:
   host: !secret namecheap_host_1
@@ -92,6 +93,4 @@ remote: !include remotes.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml
-weblink: !include weblinks.yaml
-vacuum: !include vacuums.yaml
 zone: !include_dir_list zones/

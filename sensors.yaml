@@ -1,16 +1,18 @@
-- platform: version
-  name: version_available
-  source: hassio
-  image: raspberrypi3
-- platform: version
-  name: version_current
-  source: local
 - platform: darksky
   api_key: !secret darksky_api_key
   units: us
   monitored_conditions:
+    - summary
+    - icon
     - temperature
     - humidity
+    - wind_speed
+    - apparent_temperature
+    - apparent_temperature_high
+    - apparent_temperature_low
+    - precip_probability
+    - precip_accumulation
+    - precip_intensity
 - platform: history_stats
   name: Roomba Runtime Today
   entity_id: vacuum.t2
@@ -27,14 +29,6 @@
   end: '{{ now() }}'
 - platform: template
   sensors:
-    xiaomi_temp:
-      friendly_name: Living Room Temp
-      unit_of_measurement: '°F'
-      value_template: "{{ states.fan.xiaomi_miio_device.attributes.temperature * 9/5 + 32|round(2) }}"
-    xiaomi_air_quality:
-      friendly_name: Air Quality
-      unit_of_measurement: 'PM2.5'
-      value_template: "{{ states.fan.xiaomi_miio_device.attributes.aqi }}"
     roomba_battery:
       friendly_name: Roomba Battery
       unit_of_measurement: "%"
@@ -42,3 +36,12 @@
     roomba_status:
       friendly_name: Roomba Status
       value_template: "{{ states.vacuum.t2.attributes.status }}"
+- platform: template
+  sensors:
+    time_formatted:
+      friendly_name: "Date and time"
+      value_template: "{{ now() }}"
+      icon_template: mdi:calendar-clock
+      attribute_templates:
+        date: "{{ as_timestamp(now()) | timestamp_custom('%m/%d/%Y') }}"
+        time: "{{ as_timestamp(now()) | timestamp_custom('%I:%M %p') }}"

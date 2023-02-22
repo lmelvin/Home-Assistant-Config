@@ -5,7 +5,7 @@
 *.key
 www
 OZW_Log.txt
-home-assistant.log
+*.log*
 home-assistant_v2.db
 *.db-journal
 lib
@@ -28,3 +28,15 @@ ip_bans.yaml
 /icloud/*
 zigbee.db
 /appdaemon
+
+/custom_components/aarlo
+/custom_components/hacs
+
+.aarlo
+.cloud
+.ssh
+.HA_VERSION
+.storage
+.*@gmail.com.august.conf
+/custom_components
+/image

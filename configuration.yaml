@@ -12,10 +12,6 @@ homeassistant:
       icon: mdi:filmstrip
     "remote.*":
       icon: mdi:remote
-    "sensor.patio_sensor_*":
-      hidden: true
-    "sensor.front_door_sensor*":
-      hidden: true
 
 config:
 system_health:
@@ -26,6 +22,9 @@ discovery:
 frontend:
 history:
 logbook:
+  exclude:
+    entities:
+      - sensor.time_formatted
 recorder:
   exclude:
     domains:
@@ -34,13 +33,6 @@ recorder:
       - updater
       - group
       - script
-    entities:
-      - sensor.ecolink_doorwindow_sensor_access_control
-      - sensor.ecolink_doorwindow_sensor_alarm_level
-      - sensor.ecolink_doorwindow_sensor_alarm_type
-      - sensor.ecolink_doorwindow_sensor_burglar
-      - sensor.ecolink_doorwindow_sensor_power_management
-      - sensor.ecolink_doorwindow_sensor_sourcenodeid
 
 sun:
 
@@ -55,27 +47,23 @@ tts:
   - platform: google_translate
     service_name: google_say
 
-hue:
-  bridges:
-    - host: !secret hue_ip
+#hue:
+#  bridges:
+#    - host: !secret hue_ip
 
-aarlo:
-  username: !secret arlo_un
-  password: !secret arlo_pw
+#aarlo:
+#  username: !secret arlo_un
+#  password: !secret arlo_pw
 
-alarm_control_panel:
-  - platform: aarlo
-    home_mode_name: Home
-    alarm_volume: 5
+#alarm_control_panel:
+#  - platform: aarlo
+#    home_mode_name: Home
+#    alarm_volume: 5
 
-camera:
-  - platform: aarlo
+#camera:
+#  - platform: aarlo
 
-namecheapdns:
-  host: !secret namecheap_host_1
-  domain: !secret namecheap_domain_1
-  password: !secret namecheap_password_1
-
+cover:
 lovelace:
 
 weather:
@@ -86,10 +74,10 @@ weather:
 automation: !include automations.yaml
 binary_sensor: !include binary_sensors.yaml
 device_tracker: !include device_trackers.yaml
-fan: !include fans.yaml
-nest: !include nest.yaml
-notify: !include notify.yaml
-remote: !include remotes.yaml
+group: !include groups.yaml
+#fan: !include fans.yaml
+#nest: !include nest.yaml
+#remote: !include remotes.yaml
 scene: !include scenes.yaml
 script: !include scripts.yaml
 sensor: !include sensors.yaml

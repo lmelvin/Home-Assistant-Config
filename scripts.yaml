@@ -4,18 +4,20 @@ living_room_remote_volume_down:
   - service: remote.send_command
     data:
       entity_id: remote.living_room
-      num_repeats: 3
-      device: '64778089'
+      num_repeats: 1
+      device: '71860607'
       command: VolumeDown
+  mode: single
 living_room_remote_volume_up:
   alias: TV Volume Up
   sequence:
   - service: remote.send_command
     data:
       entity_id: remote.living_room
-      num_repeats: 3
-      device: '64778089'
+      num_repeats: 1
+      device: '71860607'
       command: VolumeUp
+  mode: single
 roomba_return_home:
   alias: Roomba Return Home
   sequence:
@@ -27,25 +29,76 @@ roomba_return_home:
   sequence:
   - data:
       brightness: 255
-      entity_id: light.kitchen_bar
     service: light.turn_on
+    target:
+      area_id: kitchen
   - data:
       entity_id: remote.living_room
     service: remote.turn_on
+  mode: single
+  icon: mdi:weather-sunset-up
 '1518258307834':
   alias: Night
   sequence:
-  - data:
-      entity_id: light.kitchen_bar
+  - data: {}
     service: light.turn_off
+    target:
+      area_id:
+      - breakfast_nook
+      - kitchen
+      - office
+      - master_bedroom
+      - 4dff914707a54b27b3e830e9f71a13af
+      - foyer
+      - great_room
+      - front_bedroom
+  - service: switch.turn_off
+    target:
+      area_id:
+      - master_bedroom
+      - outside_back
+      - office
+      - 4dff914707a54b27b3e830e9f71a13af
+      - hallway
+      - foyer
+      - outside_back
+      - great_room
+      - front_bedroom
+    data: {}
   - data:
       entity_id: remote.living_room
     service: remote.turn_off
+  - service: lock.lock
+    target:
+      area_id:
+      - front
+      - garage
+      - outside_back
+    data: {}
+  - service: cover.close_cover
+    target:
+      entity_id: cover.garage_door
+    data: {}
+  mode: single
+  icon: mdi:power-sleep
 '1567494595247':
   alias: TV Mute
   sequence:
   - data:
       command: Mute
-      device: 64778089
+      device: 71860607
       entity_id: remote.living_room
     service: remote.send_command
+  mode: single
+open_garage:
+  sequence:
+  - device_id: 3cc3a8e8083c52c6ec0d37c92cd404ad
+    domain: cover
+    entity_id: cover.garage_door
+    type: open
+  - service: lock.unlock
+    target:
+      entity_id: lock.garage_deadbolt
+  mode: single
+  alias: Open Garage
+  icon: mdi:garage-open-variant

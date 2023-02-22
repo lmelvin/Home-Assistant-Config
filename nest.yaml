@@ -1,6 +1,4 @@
 client_id: !secret nest_client_id
 client_secret: !secret nest_client_secret
-sensors:
-  monitored_conditions:
-     - 'temperature'
-     - 'target'
+project_id: !secret nest_project_id
+subscriber_id: !secret nest_subscriber_id

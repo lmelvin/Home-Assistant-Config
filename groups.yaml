@@ -1,0 +1,13 @@
+people_all:
+  name: 'People All'
+  all: true
+  entities:
+    - person.jessica
+    - person.luke
+
+people:
+  name: 'People'
+  all: false
+  entities:
+    - person.jessica
+    - person.luke

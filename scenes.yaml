@@ -1,6 +1,79 @@
-- name: Movies
+- id: '1628537308789'
+  name: Movies
   entities:
-    light.kitchen_bar:
-      state: on
-      brightness: 78
-      color_temp: 425
+    light.living_room_cans:
+      supported_color_modes:
+      - brightness
+      friendly_name: Living Room Cans
+      supported_features: 32
+      color_mode: brightness
+      brightness: 3
+      state: 'on'
+    light.living_room_spotlights:
+      supported_color_modes:
+      - brightness
+      friendly_name: Living Room Spotlights
+      supported_features: 32
+      state: 'off'
+    switch.living_room_spotlights_led:
+      icon: mdi:led-on
+      friendly_name: Living Room Spotlights LED
+      state: 'on'
+    switch.living_room_fan_light:
+      friendly_name: Living Room Fan Light
+      state: 'off'
+    switch.living_room_fan_light_led:
+      icon: mdi:led-on
+      friendly_name: Living Room Fan Light LED
+      state: 'on'
+    light.kitchen_lights:
+      supported_color_modes:
+      - brightness
+      friendly_name: Kitchen Lights
+      supported_features: 32
+      state: 'off'
+    switch.kitchen_lights_led:
+      icon: mdi:led-on
+      friendly_name: Kitchen Lights LED
+      state: 'on'
+    light.breakfast_chandelier:
+      supported_color_modes:
+      - brightness
+      friendly_name: Breakfast Chandelier
+      supported_features: 32
+      state: 'off'
+    switch.breakfast_chandelier_led:
+      icon: mdi:led-on
+      friendly_name: Breakfast Chandelier LED
+      state: 'on'
+    light.breakfast_cans:
+      supported_color_modes:
+      - brightness
+      friendly_name: Breakfast Cans
+      supported_features: 32
+      state: 'off'
+    switch.breakfast_cans_led:
+      icon: mdi:led-on
+      friendly_name: Breakfast Cans LED
+      state: 'on'
+    switch.foyer_hall_spotlight:
+      friendly_name: Foyer Hall Spotlight
+      state: 'off'
+    switch.foyer_hall_spotlight_led:
+      icon: mdi:led-on
+      friendly_name: Foyer Hall Spotlight LED
+      state: 'on'
+    switch.foyer_hall:
+      friendly_name: Foyer Hall
+      state: 'off'
+    switch.foyer_hall_led:
+      icon: mdi:led-on
+      friendly_name: Foyer Hall LED
+      state: 'on'
+    switch.hallway:
+      friendly_name: Hallway Lights
+      state: 'off'
+    switch.hallway_led:
+      icon: mdi:led-on
+      friendly_name: Hallway LED
+      state: 'on'

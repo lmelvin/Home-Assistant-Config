@@ -1,51 +1,91 @@
 - id: '1507093785956'
   alias: Someone Comes Home
   trigger:
-  - entity_id: device_tracker.luke_gs9
+  - entity_id: group.people
     from: not_home
     platform: state
     to: home
   condition: []
   action:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
   - data:
       brightness: 255
-      entity_id: light.kitchen_bar
     service: light.turn_on
-  - data:
-      entity_id: alarm_control_panel.aarlo_arlo_base
-    service: alarm_control_panel.alarm_disarm
-  - condition: state
-    entity_id: remote.living_room
-    state: 'off'
-  - data:
-      activity: Watch TV
-      entity_id: remote.living_room
-    service: remote.turn_on
-  - data:
-      away_mode: home
-    service: nest.set_away_mode
+    target:
+      area_id: kitchen
+  - service: light.turn_on
+    data:
+      brightness_pct: 75
+    target:
+      entity_id: light.foyer
+  - service: switch.turn_on
+    data: {}
+    target:
+      entity_id: switch.patio
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id: foyer
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.patio
+  mode: single
 - id: '1507093785957'
   alias: Everyone Is Away
   trigger:
-  - entity_id: device_tracker.luke_gs9
-    for: 0:04:00
+  - entity_id: group.people
     from: home
     platform: state
     to: not_home
   condition: []
   action:
-  - data:
-      entity_id: light.kitchen_bar
+  - data: {}
     service: light.turn_off
-  - data:
-      entity_id: remote.living_room
-    service: remote.turn_off
-  - data:
-      entity_id: alarm_control_panel.aarlo_arlo_base
-    service: alarm_control_panel.alarm_arm_away
-  - data:
-      away_mode: away
-    service: nest.set_away_mode
+    target:
+      area_id:
+      - breakfast_nook
+      - kitchen
+      - foyer
+      - 4dff914707a54b27b3e830e9f71a13af
+      - master_bedroom
+      - office
+      - great_room
+  - service: switch.turn_off
+    target:
+      area_id:
+      - master_bedroom
+      - foyer
+      - hallway
+      - 4dff914707a54b27b3e830e9f71a13af
+      - master_bedroom
+      - office
+      - outside_back
+      - great_room
+    data: {}
+  - service: cover.close_cover
+    target:
+      device_id: 3cc3a8e8083c52c6ec0d37c92cd404ad
+    data: {}
+  - service: lock.lock
+    target:
+      area_id:
+      - front
+      - garage
+      - outside_back
+    data: {}
+  - service: remote.turn_off
+    data: {}
+    target:
+      device_id: 24e719f9152f11eb8b11e36d16b26582
+  mode: single
 - id: '1507093785958'
   alias: Home Assistant Startup
   trigger:
@@ -56,3 +96,74 @@
     service: notify.push
     data:
       message: Home Assistant started.
+- id: '1634796145226'
+  alias: Sundown
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sun.sun
+    from: above_horizon
+    to: below_horizon
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 5b158adbdb8ae28c8c3152f14a8815f2
+    entity_id: switch.front_sconces
+    domain: switch
+  mode: single
+- id: '1634796286204'
+  alias: Sunrise
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sun.sun
+    from: below_horizon
+    to: above_horizon
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 5b158adbdb8ae28c8c3152f14a8815f2
+    entity_id: switch.front_sconces
+    domain: switch
+  - type: turn_off
+    device_id: 457c93d6207ed456d8a2038f90a1d995
+    entity_id: switch.front_porch
+    domain: switch
+  mode: single
+- id: '1651004359644'
+  alias: Lock Battery Low
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ iif(states(''sensor.front_door_battery_2'') | int <= 5) }}'
+  condition: []
+  action:
+  - service: notify.push
+    data:
+      message: Front door deadbolt battery is low
+      title: Front door deadbolt battery is low
+  mode: single
+- id: '1663215296632'
+  alias: Morning
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:25:00
+  condition:
+  - condition: time
+    before: '12:00:00'
+    weekday:
+    - fri
+    - thu
+    - wed
+    - mon
+    - tue
+    after: 00:00:00
+  action:
+  - service: light.turn_on
+    data:
+      brightness_pct: 15
+      transition: 15
+    target:
+      device_id: 9cb4ad47679b42df433d3ddf28ee1c8d
+  mode: single
